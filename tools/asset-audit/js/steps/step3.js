@@ -152,13 +152,7 @@ export const step3 = {
 
     // Helper functie: pas achtergrond en kleur aan
     function applySelectorStyle(selector, selected) {
-      if (selected) {
-        selector.style.backgroundColor = 'rgb(236, 249, 252)';
-        selector.style.color = 'rgb(4, 70, 90)';
-      } else {
-        selector.style.backgroundColor = '';
-        selector.style.color = '';
-      }
+      selector.classList.toggle('selected', selected);
     }
 
   }

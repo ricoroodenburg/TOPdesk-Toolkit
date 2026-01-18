@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wizard App</title>
+  <title>TOPdesk Toolkit</title>
   <link rel="stylesheet" href="css/stylesheet.css">
-  
+  <script src="./js/components/popup.js"></script>
+   <script src="./js/components/i18n.js"></script>
+
 </head>
 
 <body>
@@ -18,18 +20,18 @@
           <slot name="navigation"></slot>
           <div class="header__text">
             <h1 class="header__text-title">
-              <span>TOPdesk Toolkit</span>
-              <span class="status-badge primary">2601.01.07</span>
+              <span data-i18n="header.title"></span>
+              <span class="status-badge primary">2601.01.08</span>
             </h1>
-            <p class="header__text-body">Find the latest release notes, do a asset audit..</p>
+            <p class="header__text-body" data-i18n="header.description"></p>
           </div>
         </div>
         <div class="header__actions">
-          <button class="button primary" id="extraAction1">Actie1</button>
+          <button class="button primary" id="btAbout" data-i18n="terms.about"></button></button>
         </div>
       </div>
     </div>
-
+    <div id="dialog"></div>
     <div id="container">
 
       <!-- Sidenav -->
@@ -38,18 +40,49 @@
           <span class="e-icons e-chevron-left-small"></span>
         </button>
         <div>
-          <!-- Content van je sidebar -->
-          <ul>
-            <li><a href="#" data-tool="asset-audit">Asset Audit</a></li>
-            <li><a href="#" data-tool="release-notes">Release Notes</a></li>
-          </ul>
+          <div class="panel__header">
+            <h2 data-i18n="terms.menu"></h2>
+          </div>
+
+          <div class="sidebar-menu">
+            <div class="sidebar-item" data-tool="startpage" title="Home">
+              <div class="sidebar-icon">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 1.5L1 8h2v6h4V10h2v4h4V8h2L8 1.5z" />
+                </svg>
+              </div>
+              <div class="sidebar-item-title" data-i18n="terms.home"></div>
+            </div>
+
+            <div class="sidebar-item" data-tool="asset-audit" title="Asset Audit">
+              <div class="sidebar-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M3 3h14v2H3V3zm0 5h14v2H3V8zm0 5h8v2H3v-2zm18.7 5.3l-3.4-3.4a6 6 0 1 0-1.4 1.4l3.4 3.4 1.4-1.4zM10 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" />
+                </svg>
+
+              </div>
+              <div class="sidebar-item-title" data-i18n="terms.assetAudit"></div>
+            </div>
+
+            <div class="sidebar-item" data-tool="release-notes" title="Release Notes">
+              <div class="sidebar-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M12 2L4 5v6c0 5.25 3.5 10.75 8 12 4.5-1.25 8-6.75 8-12V5z" />
+                </svg>
+              </div>
+              <div class="sidebar-item-title" data-i18n="terms.releaseNotes"></div>
+            </div>
+
+          </div>
+
         </div>
       </aside>
 
       <!-- Scrollable container -->
-        
-        <iframe id="tool-frame" src="" title="Tool content"></iframe>
-      
+
+      <iframe id="tool-frame" src="" title="Tool content"></iframe>
+
     </div>
 
 </body>
@@ -58,15 +91,36 @@
     const sidenav = document.getElementById('sidebar');
     const iframe = document.getElementById('tool-frame');
 
-    sidenav.addEventListener('click', event => {
-      event.preventDefault();
-      const target = event.target;
-      if (target.tagName.toLowerCase() === 'a' && target.dataset.tool) {
-        const toolName = target.dataset.tool;
-        iframe.src = `tools/${toolName}/index.html`;
+    const loadPage = (toolName) => {
+      if (!toolName) return;
+      iframe.src = `tools/${toolName}/index.html`;
+
+      document.querySelectorAll('.sidebar-item').forEach(el => {
+        el.classList.remove('active');
+      });
+
+      const activeItem = document.querySelector(`.sidebar-item[data-tool="${toolName}"]`);
+      if (activeItem) {
+        activeItem.classList.add('active');
       }
+    };
+
+    // Click-handler
+    sidenav.addEventListener('click', event => {
+      const item = event.target.closest('.sidebar-item');
+      if (!item) return; 
+
+      event.preventDefault();
+      const toolName = item.dataset.tool;
+      loadPage(toolName);
     });
+
+    // Default Page
+    loadPage('startpage'); 
   });
+
+
+
 
   const sidebar = document.getElementById('sidebar');
   const toggleButton = document.getElementById('toggleButton');
@@ -78,7 +132,6 @@
     isCollapsed = !isCollapsed;
     sidebar.classList.toggle('collapsed', isCollapsed);
 
-    // Update icoon
     if (isCollapsed) {
       icon.classList.remove('e-chevron-left-small');
       icon.classList.add('e-chevron-right-small');
@@ -87,6 +140,14 @@
       icon.classList.add('e-chevron-left-small');
     }
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector("#btAbout");
+    btn.addEventListener("click", () => {
+      showPopup(`${t('terms.about')} ${t('header.title')}`, "<p>Dit is de inhoud van de popup.</p>");
+    });
+  });
+
 </script>
 
 </html>

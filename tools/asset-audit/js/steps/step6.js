@@ -75,20 +75,23 @@ export const step6 = {
 
         // --- Datasources ---
         const intuneUserFields = [
-            { id: "userPrincipalName", text: "userPrincipalName" },
-            { id: "samAccountName", text: "samAccountName" },
-            { id: "email", text: "email" }
+            { id: "userPrincipalName", text: "User Principal Name" },
+            { id: "onPremisesSamAccountName", text: "SAM Account Name" },
+            { id: "mail", text: "Email address" },
+            { id: "onPremisesSecurityIdentifier", text: "Security Identifier (SID)"},
+            { id: "id", text: "User ID"}
         ];
 
         const topdeskUserFields = [
             { id: "email", text: "Email" },
-            { id: "loginname", text: "Login Name" },
-            { id: "networkLogin", text: "Network Login" }
+            { id: "tasLoginName", text: "Login Name" },
+            { id: "networkLoginName", text: "Network Login" },
+            { id: "mainframeLoginName", text: "Mainframe Login Name"}
         ];
 
         const intuneDeviceFields = [
-            { id: "serialNumber", text: "serialNumber" },
-            { id: "deviceId", text: "deviceId" }
+            { id: "serialNumber", text: "Serialnumber" },
+            { id: "id", text: "Intune Device ID" }
         ];
 
         // --- Initialize state.fieldMapping ---

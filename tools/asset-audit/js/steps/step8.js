@@ -76,6 +76,8 @@ export const step8 = {
         const excludeFieldId = state.topdesk.config.filters.excludeField.id;
         const memoizedFieldTopdesk = state.fieldMapping.device.topdesk
         const userField = state.fieldMapping.user.intune
+        const deviceFieldIntune = state.fieldMapping.device.intune
+        const userFieldTopdesk = state.fieldMapping.user.topdesk
         const graphToken = state.intune.accessToken;
 
         async function fetchAll() {
@@ -115,12 +117,12 @@ export const step8 = {
                     const serialNumberRaw = asset[memoizedFieldTopdesk];
                     const serialNumber = serialNumberRaw ? serialNumberRaw.toLowerCase().trim() : '';
                     const intuneDevice = serialNumber
-                        ? intuneDevices.find((dev) => dev.serialNumber.toLowerCase().trim() === serialNumber)
+                        ? intuneDevices.find((dev) => dev[deviceFieldIntune].toLowerCase().trim() === serialNumber)
                         : null;
 
-
+                    //console.log(intuneDevice);
                     // Logica voor tasLogins en userPrincipal
-                    const tasRaw = asset['assignmentPerson_tasLoginName'] || '';
+                    const tasRaw = asset[`assignmentPerson_${userFieldTopdesk}`] || '';
                     const tasLogins = new Set(
                         tasRaw
                             .toLowerCase()
@@ -181,13 +183,13 @@ export const step8 = {
                 const postStockActivityCount = updatedAssets.filter(asset => asset.postStockActivity && !asset[excludeFieldId]).length;
 
                 // Counts
-                console.log(`Total number of Excluded Devices: ${excludedDevicesCount}`);
-                console.log(`Total number of Devices: ${totalDevices}`);
-                console.log(`Total number of Matched devices: ${matchedDevices}`);
-                console.log(`Total number of Unmachted devices: ${unmatchedDevices}`);
-                console.log(`Total number of Devices which are assigned to stock and person: ${stockAndPersonAssets}`);
-                console.log(`Total number of Devices which are assigned to archived person: ${archivedPersonLinkedAssets}`);
-                console.log(`Total number of Devices which are used after assigning to stock: ${postStockActivityCount}`);
+                //console.log(`Total number of Excluded Devices: ${excludedDevicesCount}`);
+                //console.log(`Total number of Devices: ${totalDevices}`);
+                //console.log(`Total number of Matched devices: ${matchedDevices}`);
+                //console.log(`Total number of Unmachted devices: ${unmatchedDevices}`);
+                //console.log(`Total number of Devices which are assigned to stock and person: ${stockAndPersonAssets}`);
+                //console.log(`Total number of Devices which are assigned to archived person: ${archivedPersonLinkedAssets}`);
+                //console.log(`Total number of Devices which are used after assigning to stock: ${postStockActivityCount}`);
 
 
                 return {
@@ -240,7 +242,7 @@ export const step8 = {
                     status: status,
                     excludeFieldId: excludeFieldId,
                 });
-                console.log('Fetched assets:', assets);
+                //console.log('Fetched assets:', assets);
                 return assets;
             } catch (err) {
                 console.error('Failed to fetch assets:', err.message);
@@ -263,7 +265,7 @@ export const step8 = {
                     });
                 });
 
-                const fields = ['id', 'tasLoginName', 'archived'];
+                const fields = ['id', userFieldTopdesk, 'archived'];
                 const personsMap = await getPersonsByIds({
                     topdeskUrl,
                     topdeskUsername,
@@ -271,7 +273,7 @@ export const step8 = {
                     personIds: allPersonIds,
                     fields,
                 });
-                console.log('Fetched persons:', personsMap);
+                //console.log('Fetched persons:', personsMap);
                 return personsMap;
             } catch (err) {
                 console.error('Failed to fetch persons:', err.message);
@@ -365,7 +367,7 @@ export const step8 = {
                         const assetId = asset.unid;
 
                         // Voeg data van personen toe
-                        const fields = ['id', 'tasLoginName', 'archived'];
+                        const fields = ['id', userFieldTopdesk, 'archived'];
                         fields.forEach((field) => {
                             assetData[`assignmentPerson_${field}`] = persons
                                 .map((p) => {
@@ -432,23 +434,33 @@ export const step8 = {
                     graphToken,
                     serialNumbers,
                     extraFilter,
+                    fieldName: deviceFieldIntune
                 });
                 //console.log('Fetched Intune devices:', devices);
 
                 // Map van devices per serial number, en set van userIds
                 const userIds = new Set();
                 const deviceMap = {};
-
+                //console.log(devices);
                 devices.forEach((device) => {
-                    if (!device.serialNumber) return;
+                    //if (!device.serialNumber) return;
+                    if (!device[deviceFieldIntune]) return;
 
                     const enrolledDate = new Date(device.enrolledDateTime);
 
+                    /*
                     if (
                         !deviceMap[device.serialNumber] ||
                         enrolledDate > new Date(deviceMap[device.serialNumber].enrolledDateTime)
                     ) {
                         deviceMap[device.serialNumber] = device;
+                    }*/
+
+                    if (
+                        !deviceMap[device[deviceFieldIntune]] ||
+                        enrolledDate > new Date(deviceMap[device[deviceFieldIntune]].enrolledDateTime)
+                    ) {
+                        deviceMap[device[deviceFieldIntune]] = device;
                     }
 
                     const users = device.usersLoggedOn || [];
@@ -478,6 +490,8 @@ export const step8 = {
                     userBatches.map((batch) => fetchUserBatch(graphToken, batch))
                 );
 
+                //console.log(batchResponses);
+
                 batchResponses.forEach((data) => {
                     (data.responses || []).forEach((resp) => {
                         if (resp.status === 200 && resp.body) {
@@ -485,6 +499,9 @@ export const step8 = {
                         }
                     });
                 });
+
+                //console.log(userPrincipalMap);
+
 
                 // Verrijk devices met userPrincipalName
                 Object.values(deviceMap).forEach((device) => {
@@ -546,7 +563,7 @@ export const step8 = {
 
         const filterStockAndAssignment = () => applyGridFilter([
             { field: '@stock', operator: 'notequal', value: '' },
-            { field: 'assignmentPerson_tasLoginName', operator: 'notequal', value: '' },
+            { field: `assignmentPerson_${userFieldTopdesk}`, operator: 'notequal', value: '' },
             { field: excludeFieldId, operator: 'equal', value: false }
         ]);
 
@@ -649,9 +666,9 @@ Indicates activity after the asset was assigned to stock.`,
         const toolbarOptions = [
             { text: "Search", align: 'Left' },
 
-            { text: 'Change Assignments', tooltipText: '', prefixIcon: 'e-edit', id: 'btChangeAssignment', align: 'Right' },
-            { text: 'Open in TOPdesk', tooltipText: '', prefixIcon: 'e-open-link', id: 'btOpenInTopdesk', align: 'Right' },
-            { text: 'Open in Intune', tooltipText: '', prefixIcon: 'e-open-link', id: 'btOpenInIntune', align: 'Right' },
+            //{ text: 'Change Assignments', tooltipText: '', prefixIcon: 'e-edit', id: 'btChangeAssignment', align: 'Right' },
+            //{ text: 'Open in TOPdesk', tooltipText: '', prefixIcon: 'e-open-link', id: 'btOpenInTopdesk', align: 'Right' },
+            //{ text: 'Open in Intune', tooltipText: '', prefixIcon: 'e-open-link', id: 'btOpenInIntune', align: 'Right' },
             { text: "Export XLSX", align: 'Right', tooltipText: '', prefixIcon: 'e-export-excel', id: 'exportXlsx' },
 
             ///{ text: t('terms.expandAll'), align: 'Right', tooltipText: t('tooltips.expandAll'), prefixIcon: 'e-chevron-down', id: 'expandall' },
@@ -707,7 +724,7 @@ Indicates activity after the asset was assigned to stock.`,
                         return `<span class="status-badge ${props.inStock ? 'warning' : 'success'}">${props.inStock ? 'Yes' : 'No'}</span>`;
                     }
                 },
-                { field: 'assignmentPerson_tasLoginName', headerText: 'Person' },
+                { field: `assignmentPerson_${userFieldTopdesk}`, headerText: 'Person' },
                 {
                     field: 'intuneDevice.lastLoggedOnUserUserPrincipalName', headerText: 'Last Logged On User', width: 250, valueAccessor: function (field, data) {
                         return data.intuneDevice?.lastLoggedOnUserUserPrincipalName || '';
@@ -717,7 +734,7 @@ Indicates activity after the asset was assigned to stock.`,
                     field: 'matchUser', headerText: 'Match', width: 130, textAlign: 'Center', template: function (props) {
                         const intuneDevice = props.intuneDevice;
                         const userPrincipal = intuneDevice?.lastLoggedOnUserUserPrincipalName?.toLowerCase().trim() || '';
-                        const tasLogins = new Set((props.assignmentPerson_tasLoginName || '').toLowerCase().split(/[,;\s]+/).filter(Boolean));
+                        const tasLogins = new Set((props[`assignmentPerson_${userFieldTopdesk}`] || '').toLowerCase().split(/[,;\s]+/).filter(Boolean));
                         const matchUser = !intuneDevice || !userPrincipal || tasLogins.has(userPrincipal);
                         return `<span class="status-badge ${matchUser ? 'success' : 'danger'}">${matchUser ? 'True' : 'False'}</span>`;
                     }
@@ -733,6 +750,7 @@ Indicates activity after the asset was assigned to stock.`,
                     }
                 },
                 { field: 'intuneDevice.deviceName', headerText: 'Intune Device Name', width: 200 },
+                { field: 'intuneDevice.serialNumber', headerText: 'Intune Device Serial Number', width: 200 },
                 { field: 'intuneDevice.id', headerText: 'Intune Device ID', visible: false },
                 { field: 'intuneDevice.userPrincipalName', headerText: 'Intune Primary User', width: 200 },
                 { field: 'intuneDevice.operatingSystem', headerText: 'Operating System', width: 150 },

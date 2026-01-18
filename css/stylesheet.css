@@ -188,6 +188,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
+        /*
         --ds-color-fg-subtle: rgb(180, 180, 180);
         --ds-color-fg-soft: rgb(200, 200, 200);
         --ds-color-fg-muted: rgb(215, 215, 215);
@@ -202,7 +203,6 @@
         --ds-color-border-muted: rgb(60, 60, 60);
         --ds-color-border-default: rgb(100, 100, 100);
 
-        /* Primary */
         --ds-color-fg-primary-subtle: rgb(236, 249, 252);
         --ds-color-fg-primary-mild: rgb(202, 239, 247);
         --ds-color-fg-primary-soft: rgb(174, 226, 238);
@@ -224,7 +224,6 @@
         --ds-color-border-primary-default: rgb(12, 121, 154);
         --ds-color-border-primary-emphasis: rgb(236, 249, 252);
 
-        /* Success */
         --ds-color-fg-success-subtle: rgb(31, 42, 38);
         --ds-color-fg-success-mild: rgb(207, 240, 218);
         --ds-color-fg-success-soft: rgb(177, 230, 198);
@@ -246,7 +245,6 @@
         --ds-color-border-success-default: rgb(18, 126, 97);
         --ds-color-border-success-emphasis: rgb(170, 235, 210);
 
-        /* Danger */
         --ds-color-fg-danger-subtle: rgb(50, 20, 20);
         --ds-color-fg-danger-mild: rgb(90, 40, 40);
         --ds-color-fg-danger-soft: rgb(140, 50, 50);
@@ -268,7 +266,6 @@
         --ds-color-border-danger-default: rgb(253, 245, 245);
         --ds-color-border-danger-emphasis: rgb(255, 255, 255);
 
-        /* Warning, Insight, Attention — zelfde principe: tint behouden, basis donker, accenten lichter */
         --ds-color-fg-warning-subtle: rgb(45, 32, 20);
         --ds-color-fg-warning-mild: rgb(79, 51, 25);
         --ds-color-fg-warning-soft: rgb(122, 69, 17);
@@ -333,7 +330,6 @@
         --ds-color-border-attention-emphasis: rgb(255, 224, 105);
 
 
-        /* Veldspecifiek */
         --ds-color-field-border: var(--ds-color-border-default);
         --ds-color-field-bg: var(--ds-color-bg-soft);
         --ds-color-field-fg: var(--ds-color-fg-default);
@@ -347,7 +343,6 @@
         --ds-color-field-icon-fg-hover: var(--ds-color-fg-primary-subtle);
         --ds-color-field-label-fg: var(--ds-color-fg-muted);
 
-        /* Link */
         --ds-link-fg-color: var(--ds-color-fg-primary-default);
         --ds-link-bg-color: transparent;
         --ds-link-text-decoration-color: var(--ds-link-fg-color);
@@ -356,7 +351,150 @@
         --ds-link-focus-fg-color: var(--ds-color-fg-primary-subtle);
         --ds-link-focus-bg-color: var(--ds-color-bg-primary-mid);
         --ds-link-focus-text-decoration-color: var(--ds-color-fg-primary-emphasis);
+*/
 
+        --ds-color-bg-default: rgb(21, 21, 21);
+        --ds-color-bg-subtle: rgb(42, 42, 42);
+        --ds-color-bg-mild: rgb(53, 53, 53);
+        --ds-color-bg-soft: rgb(64, 64, 64);
+        --ds-color-bg-muted: rgb(111, 111, 111);
+        --ds-color-fg-default: rgb(218, 218, 218);
+        --ds-color-fg-muted: rgb(190, 190, 190);
+        --ds-color-fg-soft: rgb(163, 163, 163);
+        --ds-color-fg-subtle: rgb(111, 111, 111);
+        --ds-color-border-default: rgb(137, 137, 137);
+        --ds-color-border-muted: rgb(64, 64, 64);
+        --ds-color-fg-primary-subtle: rgb(2, 46, 61);
+        --ds-color-fg-primary-mild: rgb(3, 58, 75);
+        --ds-color-fg-primary-soft: rgb(4, 70, 90);
+        --ds-color-fg-primary-muted: rgb(12, 121, 154);
+        --ds-color-fg-primary-default: rgb(62, 177, 203);
+        --ds-color-fg-primary-emphasis: rgb(174, 226, 238);
+        --ds-color-bg-primary-default: rgb(2, 46, 61);
+        --ds-color-bg-primary-mild: rgb(3, 58, 75);
+        --ds-color-bg-primary-soft: rgb(4, 70, 90);
+        --ds-color-bg-primary-muted: rgb(12, 121, 154);
+        --ds-color-bg-primary-mid: rgb(62, 177, 203);
+        --ds-color-bg-primary-emphasis: rgb(174, 226, 238);
+        --ds-color-border-primary-subtle: rgb(2, 46, 61);
+        --ds-color-border-primary-mild: rgb(3, 58, 75);
+        --ds-color-border-primary-soft: rgb(4, 70, 90);
+        --ds-color-border-primary-muted: rgb(12, 121, 154);
+        --ds-color-border-primary-default: rgb(62, 177, 203);
+        --ds-color-border-primary-emphasis: rgb(174, 226, 238);
+        --ds-color-fg-success-subtle: rgb(3, 49, 35);
+        --ds-color-fg-success-mild: rgb(4, 61, 45);
+        --ds-color-fg-success-soft: rgb(6, 73, 55);
+        --ds-color-fg-success-muted: rgb(18, 126, 97);
+        --ds-color-fg-success-default: rgb(59, 183, 132);
+        --ds-color-fg-success-emphasis: rgb(177, 230, 198);
+        --ds-color-bg-success-default: rgb(3, 49, 35);
+        --ds-color-bg-success-mild: rgb(4, 61, 45);
+        --ds-color-bg-success-soft: rgb(6, 73, 55);
+        --ds-color-bg-success-muted: rgb(18, 126, 97);
+        --ds-color-bg-success-mid: rgb(59, 183, 132);
+        --ds-color-bg-success-emphasis: rgb(177, 230, 198);
+        --ds-color-border-success-subtle: rgb(3, 49, 35);
+        --ds-color-border-success-mild: rgb(4, 61, 45);
+        --ds-color-border-success-soft: rgb(6, 73, 55);
+        --ds-color-border-success-muted: rgb(18, 126, 97);
+        --ds-color-border-success-default: rgb(59, 183, 132);
+        --ds-color-border-success-emphasis: rgb(177, 230, 198);
+        --ds-color-fg-danger-subtle: rgb(85, 15, 16);
+        --ds-color-fg-danger-mild: rgb(104, 21, 21);
+        --ds-color-fg-danger-soft: rgb(124, 27, 27);
+        --ds-color-fg-danger-muted: rgb(207, 51, 53);
+        --ds-color-fg-danger-default: rgb(251, 125, 126);
+        --ds-color-fg-danger-emphasis: rgb(247, 210, 210);
+        --ds-color-bg-danger-default: rgb(85, 15, 16);
+        --ds-color-bg-danger-mild: rgb(104, 21, 21);
+        --ds-color-bg-danger-soft: rgb(124, 27, 27);
+        --ds-color-bg-danger-muted: rgb(207, 51, 53);
+        --ds-color-bg-danger-mid: rgb(251, 125, 126);
+        --ds-color-bg-danger-emphasis: rgb(247, 210, 210);
+        --ds-color-border-danger-subtle: rgb(85, 15, 16);
+        --ds-color-border-danger-mild: rgb(104, 21, 21);
+        --ds-color-border-danger-soft: rgb(124, 27, 27);
+        --ds-color-border-danger-muted: rgb(207, 51, 53);
+        --ds-color-border-danger-default: rgb(251, 125, 126);
+        --ds-color-border-danger-emphasis: rgb(247, 210, 210);
+        --ds-color-fg-warning-subtle: rgb(76, 26, 0);
+        --ds-color-fg-warning-mild: rgb(93, 34, 1);
+        --ds-color-fg-warning-soft: rgb(111, 43, 1);
+        --ds-color-fg-warning-muted: rgb(184, 80, 17);
+        --ds-color-fg-warning-default: rgb(246, 133, 60);
+        --ds-color-fg-warning-emphasis: rgb(254, 211, 149);
+        --ds-color-bg-warning-default: rgb(76, 26, 0);
+        --ds-color-bg-warning-mild: rgb(93, 34, 1);
+        --ds-color-bg-warning-soft: rgb(111, 43, 1);
+        --ds-color-bg-warning-muted: rgb(184, 80, 17);
+        --ds-color-bg-warning-mid: rgb(246, 133, 60);
+        --ds-color-bg-warning-emphasis: rgb(254, 211, 149);
+        --ds-color-border-warning-subtle: rgb(76, 26, 0);
+        --ds-color-border-warning-mild: rgb(93, 34, 1);
+        --ds-color-border-warning-soft: rgb(111, 43, 1);
+        --ds-color-border-warning-muted: rgb(184, 80, 17);
+        --ds-color-border-warning-default: rgb(246, 133, 60);
+        --ds-color-border-warning-emphasis: rgb(254, 211, 149);
+        --ds-color-fg-insight-subtle: rgb(52, 32, 76);
+        --ds-color-fg-insight-mild: rgb(69, 41, 85);
+        --ds-color-fg-insight-soft: rgb(85, 51, 94);
+        --ds-color-fg-insight-muted: rgb(141, 97, 139);
+        --ds-color-fg-insight-default: rgb(196, 149, 184);
+        --ds-color-fg-insight-emphasis: rgb(236, 211, 223);
+        --ds-color-bg-insight-default: rgb(52, 32, 76);
+        --ds-color-bg-insight-mild: rgb(69, 41, 85);
+        --ds-color-bg-insight-soft: rgb(85, 51, 94);
+        --ds-color-bg-insight-muted: rgb(141, 97, 139);
+        --ds-color-bg-insight-mid: rgb(196, 149, 184);
+        --ds-color-bg-insight-emphasis: rgb(236, 211, 223);
+        --ds-color-border-insight-subtle: rgb(52, 32, 76);
+        --ds-color-border-insight-mild: rgb(69, 41, 85);
+        --ds-color-border-insight-soft: rgb(85, 51, 94);
+        --ds-color-border-insight-muted: rgb(141, 97, 139);
+        --ds-color-border-insight-default: rgb(196, 149, 184);
+        --ds-color-border-insight-emphasis: rgb(236, 211, 223);
+        --ds-color-fg-attention-subtle: rgb(53, 40, 2);
+        --ds-color-fg-attention-mild: rgb(66, 51, 3);
+        --ds-color-fg-attention-soft: rgb(79, 62, 4);
+        --ds-color-fg-attention-muted: rgb(137, 108, 9);
+        --ds-color-fg-attention-default: rgb(199, 158, 10);
+        --ds-color-fg-attention-emphasis: rgb(255, 215, 53);
+        --ds-color-bg-attention-default: rgb(53, 40, 2);
+        --ds-color-bg-attention-mild: rgb(66, 51, 3);
+        --ds-color-bg-attention-soft: rgb(79, 62, 4);
+        --ds-color-bg-attention-muted: rgb(137, 108, 9);
+        --ds-color-bg-attention-mid: rgb(199, 158, 10);
+        --ds-color-bg-attention-emphasis: rgb(255, 215, 53);
+        --ds-color-border-attention-subtle: rgb(53, 40, 2);
+        --ds-color-border-attention-mild: rgb(66, 51, 3);
+        --ds-color-border-attention-soft: rgb(79, 62, 4);
+        --ds-color-border-attention-muted: rgb(137, 108, 9);
+        --ds-color-border-attention-default: rgb(199, 158, 10);
+        --ds-color-border-attention-emphasis: rgb(255, 215, 53);
+        --ds-color-field-border: var(--ds-color-border-default, rgb(137, 137, 137));
+        --ds-color-field-bg: var(--ds-color-bg-default, rgb(255, 255, 255));
+        --ds-color-field-fg: var(--ds-color-fg-default, rgb(64, 64, 64));
+        --ds-color-field-outline-outer: var(--ds-color-border-primary-emphasis, rgb(4, 70, 90));
+        --ds-color-field-outline-inner: var(--ds-color-border-primary-soft, rgb(174, 226, 238));
+        --ds-color-field-border-focus: var(--ds-color-border-primary-emphasis, rgb(4, 70, 90));
+        --ds-color-field-checked-bg: var(--ds-color-fg-primary-subtle, rgb(236, 249, 252));
+        --ds-color-field-checked-fg: var(--ds-color-fg-primary-emphasis, rgb(4, 70, 90));
+        --ds-color-field-button-fg: var(--ds-color-fg-default, rgb(64, 64, 64));
+        --ds-color-field-button-fg-hover: var(--ds-color-fg-primary-subtle, rgb(236, 249, 252));
+        --ds-color-field-button-bg-hover: var(--ds-color-bg-primary-mid, rgb(12, 121, 154));
+        --ds-color-field-icon-fg: var(--ds-color-fg-muted, rgb(87, 87, 87));
+        --ds-color-field-icon-fg-hover: var(--ds-color-fg-primary-subtle, rgb(236, 249, 252));
+        --ds-color-field-label-fg: var(--ds-color-fg-muted, rgb(87, 87, 87));
+        --ds-color-field-checked-label: var(--ds-color-fg-muted, rgb(87, 87, 87));
+        --ds-link-fg-color: var(--ds-color-fg-primary-default, rgb(12, 121, 154));
+        --ds-link-bg-color: transparent;
+        --ds-link-text-decoration-color: var(--ds-link-fg-color, var(--ds-color-fg-primary-default, rgb(12, 121, 154)));
+        --ds-link-hover-fg-color: var(--ds-color-fg-primary-emphasis, rgb(4, 70, 90));
+        --ds-link-hover-text-decoration-color: var(--ds-color-fg-primary-soft, rgb(174, 226, 238));
+        --ds-link-focus-fg-color: var(--ds-color-fg-primary-subtle, rgb(236, 249, 252));
+        --ds-link-focus-bg-color: var(--ds-color-bg-primary-mid, rgb(12, 121, 154));
+        --ds-link-focus-text-decoration-color: var(--ds-color-fg-primary-emphasis, rgb(4, 70, 90))
     }
 }
 
@@ -493,7 +631,7 @@ h2 {
     color: var(--ds-color-fg-default);
 }
 
-h3 {
+ne h3 {
     color: var(--ds-color-fg-default);
 }
 
@@ -756,13 +894,20 @@ input.textbox.error:hover {
     color: var(--ds-color-fg-default);
 }
 
+.selector.selected {
+    background: var(--ds-color-border-primary-mild);
+    color: var(--ds-color-fg-primary-emphasis);
+
+}
+
 .selector:hover {
     box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width) var(--ds-color-bg-primary-soft);
+    background: var(--ds-color-border-primary-subtle);
 }
 
 .selector:active {
-    background-color: var(--ds-color-bg-primary-default);
-    border-color: var(--ds-color-border-primary-default);
+    background: var(--ds-color-border-primary-mild);
+    color: var(--ds-color-fg-primary-emphasis);
 }
 
 /* Toggle button */
@@ -912,6 +1057,7 @@ input.textbox.error:hover {
     --ds-spacer-1x-em: calc(4em / 18);
     align-self: start;
     /*padding-top: calc(var(--ds-spacer-1x, 4px) * 3);*/
+    margin-block-start: 0px
 }
 
 .stepper-box.collapsed {
@@ -934,6 +1080,7 @@ input.textbox.error:hover {
     justify-content: center;
     z-index: 10;
     padding: 0px !important;
+    color: var(--ds-color-fg-default);
 }
 
 .collapse-toggle:hover {
@@ -948,4 +1095,161 @@ input.textbox.error:hover {
 /* Custom */
 .hidden {
     visibility: hidden;
+}
+
+/* Sidenav */
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* ruimte tussen icon en text */
+    padding: 10px 14px 10px 18px;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    /*transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;*/
+}
+
+/* ICON */
+.sidebar-icon {
+    width: 20px;
+    /* vaste breedte: hierdoor beweegt de tekst nooit */
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ds-color-icon-subtle, #666);
+}
+
+/* Hover-staat */
+.sidebar-item:hover {
+    background: var(--ds-color-border-primary-subtle);
+}
+
+/* Active / Selected */
+.sidebar-item.active {
+    background: var(--ds-color-border-primary-mild);
+    /*var(--ds-color-border-primary-mild);*/
+    color: var(--ds-color-fg-primary-emphasis);
+    border-left: 4px solid var(--ds-color-border-primary-emphasis);
+}
+
+.sidebar-item-title.active {
+    padding-left: -4px;
+}
+
+.sidebar-section-title {
+    color: var(--ds-color-text-subtle);
+    padding: 12px 14px 6px 18px;
+    letter-spacing: 0.5px;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Verberg tekst */
+#sidebar.collapsed .sidebar-item-title {
+    display: none;
+}
+
+/* Strip padding zodat icon mooi centreert */
+#sidebar.collapsed .sidebar-item {
+    padding: 10px 0;
+    justify-content: center;
+}
+
+/* Icon iets groter in collapsed mode? Optioneel */
+#sidebar.collapsed .sidebar-icon {
+    font-size: 18px;
+}
+
+#sidebar.collapsed .panel__header {
+    display: none;
+}
+
+/* Popup */
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#popup .popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--ds-color-bg-muted);
+    opacity: 0.5;
+}
+
+#popup .popup-box {
+    position: relative;
+    background: var(--ds-color-bg-default) !important;
+    border-radius: calc(var(--ds-spacer-1x) * 2);
+    max-width: 500px;
+    width: 90%;
+    max-height: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    z-index: 2;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-close {
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ds-color-bg-default) !important;
+    color: var(--ds-color-fg-default) !important;
+    height: 36px !important;
+    min-width: var(--_ds-button-group-child-min-width) !important;
+    max-height: var(--_ds-button-group-child-min-height) !important;
+    display: flex;
+    border-radius: var(--ds-spacer-radius-rounded)
+}
+
+.popup-close svg {
+    width: calc(var(--ds-spacer-1x-em) * 4);
+    height: calc(var(--ds-spacer-1x-em) * 4);
+    fill: currentColor;
+}
+
+.popup-close:hover {
+    box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width) var(--ds-color-bg-primary-soft);
+    border: var(--ds-spacer-border) solid var(--ds-color-border-default) !important;
+}
+
+.popup-content {
+    overflow-y: auto;
+    color: var(--ds-color-fg-default) !important;
+}
+
+.popup-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.popup-title {
+    font-size: var(--ds-text-title-2-font-size);
+    font-weight: 600;
+    line-height: var(--ds-text-title-2-font-line-height);
+    color: var(--ds-color-fg-default) !important;
+    margin-block-end: 0;
+    margin-block-start: 0;
 }

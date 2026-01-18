@@ -67,28 +67,48 @@ function prevStep() {
 
 // UPDATE BUTTON STATES
 function updateButtons() {
+
+    if (!wizardState.stepsValid[wizardState.currentStep]) {
+        for (let i = wizardState.currentStep + 1; i < wizardState.stepsValid.length; i++) {
+            wizardState.stepsValid[i] = false;
+        }
+    }
+
     document.getElementById('prevBtn').disabled = wizardState.currentStep === 0;
     document.getElementById('nextBtn').disabled = !wizardState.stepsValid[wizardState.currentStep];
 
-    if (wizardState.currentStep === 0) {
-        document.getElementById('prevBtn').style.visibility = "hidden";
-    } else {
-        document.getElementById('prevBtn').style.visibility = "visible";
-    }
+    // Buttons
+    prevBtn.disabled = wizardState.currentStep === 0;
+    nextBtn.disabled = !wizardState.stepsValid[wizardState.currentStep];
 
-    if (wizardState.currentStep === 6) {
-        document.getElementById('nextBtn').textContent = "Start Audit";
-    } else {
-        document.getElementById('nextBtn').textContent = "Next Step";
-    }
+    prevBtn.style.visibility = wizardState.currentStep === 0 ? "hidden" : "visible";
+    nextBtn.textContent = wizardState.currentStep === 6 ? "Start Audit" : "Next Step";
+    nextBtn.style.display = wizardState.currentStep === 7 ? "none" : "";
+    document.getElementById('stepList').style.display = wizardState.currentStep === 7 ? "none" : "";
 
-    if (wizardState.currentStep === 7) {
-        document.getElementById('nextBtn').style.display = "none";
-        document.getElementById('stepList').style.display = "none";
-    } else {
-        document.getElementById('nextBtn').style.display = "";
-        document.getElementById('stepList').style.display = "";
-    }
+    // 3️⃣ Highlight de stappen opnieuw op basis van stepsValid
+    highlightStep(wizardState.currentStep);
+
+    // --- LI cursors live updaten ---
+    const currentStep = wizardState.currentStep;
+    const currentValid = wizardState.stepsValid[wizardState.currentStep];
+    const nextStepIndex = wizardState.stepsValid.findIndex((v) => !v);
+
+    document.querySelectorAll('#stepList li').forEach((li, index) => {
+        let clickable = false;
+
+        if (index === currentStep) {
+            clickable = true; // huidige stap altijd pointer
+        } else if (wizardState.stepsValid[index]) {
+            clickable = true; // voltooide eerdere stappen altijd pointer
+        } else if (index === nextStepIndex && currentValid) {
+            clickable = true; // volgende stap pointer **alleen als huidige geldig**
+        }
+
+        li.style.cursor = clickable ? 'pointer' : 'default';
+
+    });
+
 }
 
 // STEP LIST / STEPPER
@@ -105,10 +125,12 @@ function renderStepList() {
         `;
 
         li.setAttribute("data-step-number", index + 1);
+
         li.addEventListener('click', () => {
             // Controleer dat **alle voorgaande stappen** geldig zijn
             const canAccess = wizardState.stepsValid.slice(0, index).every(valid => valid);
             if (index === 0 || canAccess) {
+
                 wizardState.currentStep = index;
                 loadStep(index);
                 updateButtons();
@@ -119,6 +141,8 @@ function renderStepList() {
     });
 }
 
+
+/*
 function highlightStep(index) {
     document.querySelectorAll('#stepList li').forEach((li, i) => {
         li.classList.remove('active', 'completed', 'inactive');
@@ -131,7 +155,23 @@ function highlightStep(index) {
             li.classList.add('inactive'); // nog niet bereikt
         }
     });
+}*/
+function highlightStep(index) {
+    document.querySelectorAll('#stepList li').forEach((li, i) => {
+        li.classList.remove('active', 'completed', 'inactive');
+
+        if (i === index) {
+            li.classList.add('active'); // huidige stap
+        }
+        else if (wizardState.stepsValid[i]) {
+            li.classList.add('completed'); // elke stap die valid is
+        }
+        else {
+            li.classList.add('inactive'); // nog niet bereikt of invalid
+        }
+    });
 }
+
 
 /*
 function toggleStepper() {

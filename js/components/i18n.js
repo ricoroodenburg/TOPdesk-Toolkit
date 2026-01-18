@@ -24,7 +24,7 @@ function detectBrowserLanguage() {
 }
 
 function loadTranslations(lang) {
-  return fetch(`locales/${lang}.json`)
+  return fetch(`../../locales/${lang}.json`)
     .then(res => res.json())
     .then(data => {
       window.translations = data;

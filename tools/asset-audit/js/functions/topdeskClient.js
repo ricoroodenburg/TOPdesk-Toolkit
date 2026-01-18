@@ -244,7 +244,7 @@ export async function getAssets({
         // Stel de request body samen als een JSON-object
         const requestBody = {
             templateId: templates.map((t) => t.id || t), // Meerdere templates als array
-            fields: `name,${field},@assignments,@stock,@type,${fieldQuery},${excludeFieldId}`,
+            fields: `name,${field},@assignments,@stock,@type${fieldQuery ? `,${fieldQuery}` : ''},${excludeFieldId}`, //`name,${field},@assignments,@stock,@type,${fieldQuery},${excludeFieldId}`,
             fetchCount: true,
             pageSize: 1000,
             resolveDropdownOptions: true,

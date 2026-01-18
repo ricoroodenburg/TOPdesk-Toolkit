@@ -24,7 +24,12 @@
     "yes": "Yes",
     "no": "No",
     "cancel": "Cancel",
-    "statusPage": "Status Page"
+    "statusPage": "Status Page",
+    "home": "Home",
+    "assetAudit": "Asset Audit",
+    "releaseNotes" : "Release Notes",
+    "menu": "Menu",
+    "welcome": "Welkom"
   },
   "tooltips": {
     "more": "More",

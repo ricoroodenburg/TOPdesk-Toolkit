@@ -1,6 +1,6 @@
 {
   "header": {
-    "title": "TOPdesk Release Notes",
+    "title": "TOPdesk Toolkit",
     "description": "Ontdek de nieuwste updates en verbeteringen in TOPdesk."
   },
   "terms": {
@@ -24,7 +24,12 @@
     "yes": "Ja",
     "no": "Nee",
     "cancel": "Annuleren",
-    "statusPage": "Statuspagina"
+    "statusPage": "Statuspagina",
+    "home": "Start",
+    "assetAudit": "Asset Audit",
+    "releaseNotes" : "Release Notes",
+    "menu": "Menu",
+    "welcome": "Welkom"
   },
   "tooltips": {
     "more": "Meer",
