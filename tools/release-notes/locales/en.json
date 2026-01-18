@@ -1,0 +1,45 @@
+{
+  "header": {
+    "title": "TOPdesk Release Notes",
+    "description": "Discover the latest updates and improvements in TOPdesk."
+  },
+  "terms":{
+    "more": "More",
+    "search": "Search",
+    "about": "About",
+    "expandAll": "Expand All",
+    "collapseAll": "Collapse All",
+    "release": "Version",
+    "releaseDate": "Release Date",
+    "description": "Description",
+    "category": "Category",
+    "subcategory": "Subcategory",
+    "source": "Source",
+    "feature": "Feature",
+    "api": "API",
+    "true": "True",
+    "false": "False",
+    "close": "Close",
+    "oK": "OK",
+    "yes": "Yes",
+    "no": "No",
+    "cancel": "Cancel",
+    "statusPage": "Status Page"
+  },
+  "tooltips": {
+    "more": "More",
+    "search": "Search",
+    "about": "About",
+    "expandAll": "Expand All",
+    "collapseAll": "Collapse All" 
+  },
+  "messages": {
+    "noSearchResult": "No results found",
+    "noSearchResultFor": "No results found for",
+    "searchTryAgain": "Try a different search",
+    "releasedOn": "Released on",
+    "inVersion": "in version",
+    "notDevelopmentBy":"This product is not developed, supported, or affiliated with TOPdesk. Best effort only.",
+    "showOn": "Show on"
+  }
+}

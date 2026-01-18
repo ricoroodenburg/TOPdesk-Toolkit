@@ -1,0 +1,45 @@
+{
+  "header": {
+    "title": "Notas de la versión de TOPdesk",
+    "description": "Descubre las últimas actualizaciones y mejoras de TOPdesk."
+  },
+  "terms": {
+    "more": "Más",
+    "search": "Buscar",
+    "about": "Acerca de",
+    "expandAll": "Expandir todo",
+    "collapseAll": "Contraer todo",
+    "release": "Versión",
+    "releaseDate": "Fecha de lanzamiento",
+    "description": "Descripción",
+    "category": "Categoría",
+    "subcategory": "Subcategoría",
+    "source": "Fuente",
+    "feature": "Función",
+    "api": "API",
+    "true": "Verdadero",
+    "false": "Falso",
+    "close": "Cerrar",
+    "oK": "OK",
+    "yes": "Sí",
+    "no": "No",
+    "cancel": "Cancelar",
+    "statusPage": "Página de estado"
+  },
+  "tooltips": {
+    "more": "Más",
+    "search": "Buscar",
+    "about": "Acerca de",
+    "expandAll": "Expandir todo",
+    "collapseAll": "Contraer todo"
+  },
+  "messages": {
+    "noSearchResult": "No se encontraron resultados",
+    "noSearchResultFor": "No se encontraron resultados para",
+    "searchTryAgain": "Intente otra búsqueda",
+    "releasedOn": "Publicado el",
+    "inVersion": "en la versión",
+    "notDevelopmentBy": "Este producto no fue desarrollado, soportado ni está afiliado a TOPdesk. Solo se realiza el mejor esfuerzo.",
+    "showOn": "Mostrar en"
+  }
+}

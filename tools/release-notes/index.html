@@ -1,0 +1,70 @@
+<head>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <script src="https://cdn.syncfusion.com/ej2/32.1.19/dist/ej2.min.js"></script>
+    <script>ej.base.registerLicense("Ngo9BigBOggjHTQxAR8/V1JGaF5cXGpCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWH1ceXVVRmBeWUB0VkFWYEs=");</script>
+    <script src="./js/i18n.js"></script>
+    <script src="./js/dialog.js"></script>
+    <script src="./js/buttons.js"></script>
+    <script src="./js/topdesk-release-notes.js"></script>
+    <script src="./js/grid.js"></script>
+    <script src="./js/calendar.js"></script>
+    <script src="./js/listview.js"></script>
+    <script src="./js/popup.js"></script>
+</head>
+<div class="header-toolbar">
+    <div id="buttonToolbar">
+        <button class="button" id="btn1">
+            <span class="button-content">
+                <span class="svg-button-grid"></span>
+            </span>
+        </button>
+        <button class="button" id="btn2">
+            <span class="button-content">
+                <span class="svg-button-calender"></span>
+            </span>
+        </button>
+    </div>
+</div>
+<div class="content-desktop">
+    <script id="captiontemplate" type="text/x-template">
+					${template(data)}
+				</script>
+    <div id="grid"></div>
+    <div id="calendar"></div>
+</div>
+<div class="content-mobile">
+    <div id="listview"></div>
+</div>
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const btnGrid = document.getElementById("btn1");
+        const btnCal = document.getElementById("btn2");
+
+        const divGrid = document.getElementById("grid");
+        const divCal = document.getElementById("calendar");
+
+        divGrid.classList.add("view-active");
+        btnGrid.classList.add("selected");
+
+        btnGrid.addEventListener("click", function () {
+            divGrid.classList.add("view-active");
+            divCal.classList.remove("view-active");
+
+            btnGrid.classList.add("selected");
+            btnCal.classList.remove("selected");
+
+        });
+
+        btnCal.addEventListener("click", function () {
+            divCal.classList.add("view-active");
+            divGrid.classList.remove("view-active");
+
+            btnCal.classList.add("selected");
+            btnGrid.classList.remove("selected");
+
+        });
+
+    });
+</script>

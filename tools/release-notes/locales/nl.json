@@ -1,0 +1,45 @@
+{
+  "header": {
+    "title": "TOPdesk Release Notes",
+    "description": "Ontdek de nieuwste updates en verbeteringen in TOPdesk."
+  },
+  "terms": {
+    "more": "Meer",
+    "search": "Zoeken",
+    "about": "Over",
+    "expandAll": "Alles uitklappen",
+    "collapseAll": "Alles inklappen",
+    "release": "Versie",
+    "releaseDate": "Datum van uitgave",
+    "description": "Beschrijving",
+    "category": "Categorie",
+    "subcategory": "Subcategorie",
+    "source": "Bron",
+    "feature": "Functie",
+    "api": "API",
+    "true": "Waar",
+    "false": "Onwaar",
+    "close": "Sluiten",
+    "oK": "OK",
+    "yes": "Ja",
+    "no": "Nee",
+    "cancel": "Annuleren",
+    "statusPage": "Statuspagina"
+  },
+  "tooltips": {
+    "more": "Meer",
+    "search": "Zoeken",
+    "about": "Over",
+    "expandAll": "Alles uitklappen",
+    "collapseAll": "Alles inklappen"
+  },
+  "messages": {
+    "noSearchResult": "Geen resultaten gevonden",
+    "noSearchResultFor": "Geen resultaten gevonden voor",
+    "searchTryAgain": "Probeer een andere zoekopdracht",
+    "releasedOn": "Uitgebracht op",
+    "inVersion": "in versie",
+    "notDevelopmentBy": "Dit product is niet ontwikkeld, ondersteund of gelinkt aan TOPdesk. Alleen best-effort.",
+    "showOn": "Toon op"
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wizard App</title>
+  <link rel="stylesheet" href="css/stylesheet.css">
+  
+</head>
+
+<body>
+  <div class="control-pane">
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header__container">
+        <div class="header__navigation">
+          <slot name="navigation"></slot>
+          <div class="header__text">
+            <h1 class="header__text-title">
+              <span>TOPdesk Toolkit</span>
+              <span class="status-badge primary">2601.01.07</span>
+            </h1>
+            <p class="header__text-body">Find the latest release notes, do a asset audit..</p>
+          </div>
+        </div>
+        <div class="header__actions">
+          <button class="button primary" id="extraAction1">Actie1</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="container">
+
+      <!-- Sidenav -->
+      <aside class="orientation-stepper-section stepper-box" id="sidebar">
+        <button class="collapse-toggle" id="toggleButton">
+          <span class="e-icons e-chevron-left-small"></span>
+        </button>
+        <div>
+          <!-- Content van je sidebar -->
+          <ul>
+            <li><a href="#" data-tool="asset-audit">Asset Audit</a></li>
+            <li><a href="#" data-tool="release-notes">Release Notes</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Scrollable container -->
+        
+        <iframe id="tool-frame" src="" title="Tool content"></iframe>
+      
+    </div>
+
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sidenav = document.getElementById('sidebar');
+    const iframe = document.getElementById('tool-frame');
+
+    sidenav.addEventListener('click', event => {
+      event.preventDefault();
+      const target = event.target;
+      if (target.tagName.toLowerCase() === 'a' && target.dataset.tool) {
+        const toolName = target.dataset.tool;
+        iframe.src = `tools/${toolName}/index.html`;
+      }
+    });
+  });
+
+  const sidebar = document.getElementById('sidebar');
+  const toggleButton = document.getElementById('toggleButton');
+  const icon = toggleButton.querySelector('.e-icons');
+
+  let isCollapsed = false;
+
+  toggleButton.addEventListener('click', () => {
+    isCollapsed = !isCollapsed;
+    sidebar.classList.toggle('collapsed', isCollapsed);
+
+    // Update icoon
+    if (isCollapsed) {
+      icon.classList.remove('e-chevron-left-small');
+      icon.classList.add('e-chevron-right-small');
+    } else {
+      icon.classList.remove('e-chevron-right-small');
+      icon.classList.add('e-chevron-left-small');
+    }
+  });
+</script>
+
+</html>

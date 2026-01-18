@@ -1,0 +1,951 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import "./syncfusion.css";
+
+:root {
+    --ds-color-fg-subtle: rgb(163, 163, 163);
+    --ds-color-fg-soft: rgb(111, 111, 111);
+    --ds-color-fg-muted: rgb(87, 87, 87);
+    --ds-color-fg-default: rgb(64, 64, 64);
+    --ds-color-bg-default: rgb(255, 255, 255);
+    --ds-color-bg-subtle: rgb(246, 246, 246);
+    --ds-color-bg-mild: rgb(232, 232, 232);
+    --ds-color-bg-soft: rgb(218, 218, 218);
+    --ds-color-bg-muted: rgb(163, 163, 163);
+    --ds-color-border-muted: rgb(218, 218, 218);
+    --ds-color-border-default: rgb(137, 137, 137);
+
+    /* Font */
+    --ds-color-fg-primary-subtle: rgb(236, 249, 252);
+    --ds-color-fg-primary-mild: rgb(202, 239, 247);
+    --ds-color-fg-primary-soft: rgb(174, 226, 238);
+    --ds-color-fg-primary-muted: rgb(62, 177, 203);
+    --ds-color-fg-primary-default: rgb(12, 121, 154);
+    --ds-color-fg-primary-emphasis: rgb(4, 70, 90);
+
+
+    --ds-color-bg-primary-default: rgb(236, 249, 252);
+    --ds-color-bg-primary-mild: rgb(202, 239, 247);
+    --ds-color-bg-primary-soft: rgb(174, 226, 238);
+    --ds-color-bg-primary-muted: rgb(62, 177, 203);
+    --ds-color-bg-primary-mid: rgb(12, 121, 154);
+    --ds-color-bg-primary-emphasis: rgb(4, 70, 90);
+    --ds-color-border-primary-subtle: rgb(236, 249, 252);
+    --ds-color-border-primary-mild: rgb(202, 239, 247);
+    --ds-color-border-primary-soft: rgb(174, 226, 238);
+    --ds-color-border-primary-muted: rgb(62, 177, 203);
+    --ds-color-border-primary-default: rgb(12, 121, 154);
+    --ds-color-border-primary-emphasis: rgb(4, 70, 90);
+    --ds-color-fg-success-subtle: rgb(239, 249, 242);
+    --ds-color-fg-success-mild: rgb(207, 240, 218);
+    --ds-color-fg-success-soft: rgb(177, 230, 198);
+    --ds-color-fg-success-muted: rgb(59, 183, 132);
+    --ds-color-fg-success-default: rgb(18, 126, 97);
+    --ds-color-fg-success-emphasis: rgb(6, 73, 55);
+    --ds-color-bg-success-default: rgb(239, 249, 242);
+    --ds-color-bg-success-mild: rgb(207, 240, 218);
+    --ds-color-bg-success-soft: rgb(177, 230, 198);
+    --ds-color-bg-success-muted: rgb(59, 183, 132);
+    --ds-color-bg-success-mid: rgb(18, 126, 97);
+    --ds-color-bg-success-emphasis: rgb(6, 73, 55);
+    --ds-color-border-success-subtle: rgb(239, 249, 242);
+    --ds-color-border-success-mild: rgb(207, 240, 218);
+    --ds-color-border-success-soft: rgb(177, 230, 198);
+    --ds-color-border-success-muted: rgb(59, 183, 132);
+    --ds-color-border-success-default: rgb(18, 126, 97);
+    --ds-color-border-success-emphasis: rgb(6, 73, 55);
+    --ds-color-fg-danger-subtle: rgb(253, 245, 245);
+    --ds-color-fg-danger-mild: rgb(250, 227, 227);
+    --ds-color-fg-danger-soft: rgb(247, 210, 210);
+    --ds-color-fg-danger-muted: rgb(251, 125, 126);
+    --ds-color-fg-danger-default: rgb(207, 51, 53);
+    --ds-color-fg-danger-emphasis: rgb(124, 27, 27);
+    --ds-color-bg-danger-default: rgb(253, 245, 245);
+    --ds-color-bg-danger-mild: rgb(250, 227, 227);
+    --ds-color-bg-danger-soft: rgb(247, 210, 210);
+    --ds-color-bg-danger-muted: rgb(251, 125, 126);
+    --ds-color-bg-danger-mid: rgb(207, 51, 53);
+    --ds-color-bg-danger-emphasis: rgb(124, 27, 27);
+    --ds-color-border-danger-subtle: rgb(253, 245, 245);
+    --ds-color-border-danger-mild: rgb(250, 227, 227);
+    --ds-color-border-danger-soft: rgb(247, 210, 210);
+    --ds-color-border-danger-muted: rgb(251, 125, 126);
+    --ds-color-border-danger-default: rgb(207, 51, 53);
+    --ds-color-border-danger-emphasis: rgb(124, 27, 27);
+    --ds-color-fg-warning-subtle: rgb(255, 245, 231);
+    --ds-color-fg-warning-mild: rgb(255, 228, 192);
+    --ds-color-fg-warning-soft: rgb(254, 211, 149);
+    --ds-color-fg-warning-muted: rgb(246, 133, 60);
+    --ds-color-fg-warning-default: rgb(184, 80, 17);
+    --ds-color-fg-warning-emphasis: rgb(111, 43, 1);
+    --ds-color-bg-warning-default: rgb(255, 245, 231);
+    --ds-color-bg-warning-mild: rgb(255, 228, 192);
+    --ds-color-bg-warning-soft: rgb(254, 211, 149);
+    --ds-color-bg-warning-muted: rgb(246, 133, 60);
+    --ds-color-bg-warning-mid: rgb(184, 80, 17);
+    --ds-color-bg-warning-emphasis: rgb(111, 43, 1);
+    --ds-color-border-warning-subtle: rgb(255, 245, 231);
+    --ds-color-border-warning-mild: rgb(255, 228, 192);
+    --ds-color-border-warning-soft: rgb(254, 211, 149);
+    --ds-color-border-warning-muted: rgb(246, 133, 60);
+    --ds-color-border-warning-default: rgb(184, 80, 17);
+    --ds-color-border-warning-emphasis: rgb(111, 43, 1);
+    --ds-color-fg-insight-subtle: rgb(251, 245, 248);
+    --ds-color-fg-insight-mild: rgb(244, 228, 236);
+    --ds-color-fg-insight-soft: rgb(236, 211, 223);
+    --ds-color-fg-insight-muted: rgb(196, 149, 184);
+    --ds-color-fg-insight-default: rgb(141, 97, 139);
+    --ds-color-fg-insight-emphasis: rgb(85, 51, 94);
+    --ds-color-bg-insight-default: rgb(251, 245, 248);
+    --ds-color-bg-insight-mild: rgb(244, 228, 236);
+    --ds-color-bg-insight-soft: rgb(236, 211, 223);
+    --ds-color-bg-insight-muted: rgb(196, 149, 184);
+    --ds-color-bg-insight-mid: rgb(141, 97, 139);
+    --ds-color-bg-insight-emphasis: rgb(85, 51, 94);
+    --ds-color-border-insight-subtle: rgb(251, 245, 248);
+    --ds-color-border-insight-mild: rgb(244, 228, 236);
+    --ds-color-border-insight-soft: rgb(236, 211, 223);
+    --ds-color-border-insight-muted: rgb(196, 149, 184);
+    --ds-color-border-insight-default: rgb(141, 97, 139);
+    --ds-color-border-insight-emphasis: rgb(85, 51, 94);
+    --ds-color-fg-attention-subtle: rgb(255, 247, 214);
+    --ds-color-fg-attention-mild: rgb(255, 232, 144);
+    --ds-color-fg-attention-soft: rgb(255, 215, 53);
+    --ds-color-fg-attention-muted: rgb(199, 158, 10);
+    --ds-color-fg-attention-default: rgb(137, 108, 9);
+    --ds-color-fg-attention-emphasis: rgb(79, 62, 4);
+    --ds-color-bg-attention-default: rgb(255, 247, 214);
+    --ds-color-bg-attention-mild: rgb(255, 232, 144);
+    --ds-color-bg-attention-soft: rgb(255, 215, 53);
+    --ds-color-bg-attention-muted: rgb(199, 158, 10);
+    --ds-color-bg-attention-mid: rgb(137, 108, 9);
+    --ds-color-bg-attention-emphasis: rgb(79, 62, 4);
+    --ds-color-border-attention-subtle: rgb(255, 247, 214);
+    --ds-color-border-attention-mild: rgb(255, 232, 144);
+    --ds-color-border-attention-soft: rgb(255, 215, 53);
+    --ds-color-border-attention-muted: rgb(199, 158, 10);
+    --ds-color-border-attention-default: rgb(137, 108, 9);
+    --ds-color-border-attention-emphasis: rgb(79, 62, 4);
+    --_ds-field-border-width-focus: 1px;
+    --ds-color-field-border: var(--ds-color-border-default, rgb(137, 137, 137));
+    --ds-color-field-bg: var(--ds-color-bg-default, rgb(255, 255, 255));
+    --ds-color-field-fg: var(--ds-color-fg-default, rgb(64, 64, 64));
+    --ds-color-field-outline-outer: var(--ds-color-border-primary-emphasis, rgb(4, 70, 90));
+    --ds-color-field-outline-inner: var(--ds-color-border-primary-soft, rgb(174, 226, 238));
+    --ds-color-field-border-focus: var(--ds-color-border-primary-emphasis, rgb(4, 70, 90));
+    --ds-color-field-button-fg: var(--ds-color-fg-default, rgb(64, 64, 64));
+    --ds-color-field-button-fg-hover: var(--ds-color-fg-primary-subtle, rgb(236, 249, 252));
+    --ds-color-field-button-bg-hover: var(--ds-color-bg-primary-mid, rgb(12, 121, 154));
+    --ds-color-field-icon-fg: var(--ds-color-fg-muted, rgb(87, 87, 87));
+    --ds-color-field-icon-fg-hover: var(--ds-color-fg-primary-subtle, rgb(236, 249, 252));
+    --ds-color-field-label-fg: var(--ds-color-fg-muted, rgb(87, 87, 87));
+    --ds-interactive-focus-ring-width: 4px;
+    --ds-interactive-outline-ring-width: 2px;
+    --ds-interactive-focus-outline-offset: 2px;
+    --ds-interactive-transition-timing-function: ease-in-out;
+    --ds-interactive-transition-hover-timing-function: ease-in-out;
+    --ds-layout-gap: calc(var(--ds-spacer-1x, 4px) * 4);
+    --ds-layout-padding: calc(var(--ds-spacer-1x, 4px) * 4);
+    --ds-layout-columns: 4;
+    --ds-layout-column-span: var(--ds-layout-columns, 4);
+    --ds-spacer-1x: 4px;
+    --ds-spacer-border: 1px;
+    --ds-spacer-1x-em: 0.25em;
+    --ds-spacer-radius-rounded: 9999px;
+    --ds-text-family-primary: Open Sans;
+    --ds-text-family-secondary: Bree Serif;
+    --ds-text-title-brand-font-size: 1.5rem;
+    --ds-text-title-brand-font-line-height: 1.6666666667;
+    --ds-text-title-1-font-size: 1.375rem;
+    --ds-text-title-1-font-line-height: 1.4545454545;
+    --ds-text-title-2-font-size: 1.25rem;
+    --ds-text-title-2-font-line-height: 1.6;
+    --ds-text-title-3-font-size: 1.125rem;
+    --ds-text-title-3-font-line-height: 1.3333333333;
+    --ds-text-title-4-font-size: 1rem;
+    --ds-text-paragraph-font-size: 1rem;
+    --ds-text-body-font-size: 1rem;
+    --ds-text-body-line-height: 1.5;
+    --ds-text-subtext-body-font-size: 0.875rem;
+    --ds-text-subtext-paragraph-font-size: 0.875rem;
+    --ds-text-subtext-line-height: 1.4285714286;
+    --ds-text-tag-font-size: 0.875rem;
+    --ds-text-tag-line-height: 1.1428571429;
+    --ds-link-fg-color: var(--ds-color-fg-primary-default, rgb(12, 121, 154));
+    --ds-link-bg-color: transparent;
+    --ds-link-text-decoration-color: var(--ds-link-fg-color, var(--ds-color-fg-primary-default, rgb(12, 121, 154)));
+    --ds-link-hover-fg-color: var(--ds-color-fg-primary-emphasis, rgb(4, 70, 90));
+    --ds-link-hover-text-decoration-color: var(--ds-color-fg-primary-soft, rgb(174, 226, 238));
+    --ds-link-focus-fg-color: var(--ds-color-fg-primary-subtle, rgb(236, 249, 252));
+    --ds-link-focus-bg-color: var(--ds-color-bg-primary-mid, rgb(12, 121, 154));
+    --ds-link-focus-text-decoration-color: var(--ds-color-fg-primary-emphasis, rgb(4, 70, 90));
+    --ds-link-text-decoration: underline;
+    --ds-link-text-decoration-thickness: var(--ds-spacer-border, 1px);
+    --ds-color-option-checkbox-bg: var(--ds-color-bg-primary-emphasis, rgb(4, 70, 90));
+    --ds-color-option-checkbox-border: var(--ds-color-bg-primary-emphasis, rgb(4, 70, 90));
+    --_ds-button-group-child-min-height: 36px;
+    --_ds-button-group-child-min-width: 36px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ds-color-fg-subtle: rgb(180, 180, 180);
+        --ds-color-fg-soft: rgb(200, 200, 200);
+        --ds-color-fg-muted: rgb(215, 215, 215);
+        --ds-color-fg-default: rgb(240, 240, 240);
+
+        --ds-color-bg-default: rgb(36, 36, 36);
+        --ds-color-bg-subtle: rgb(28, 28, 28);
+        --ds-color-bg-mild: rgb(36, 36, 36);
+        --ds-color-bg-soft: rgb(48, 48, 48);
+        --ds-color-bg-muted: rgb(80, 80, 80);
+
+        --ds-color-border-muted: rgb(60, 60, 60);
+        --ds-color-border-default: rgb(100, 100, 100);
+
+        /* Primary */
+        --ds-color-fg-primary-subtle: rgb(236, 249, 252);
+        --ds-color-fg-primary-mild: rgb(202, 239, 247);
+        --ds-color-fg-primary-soft: rgb(174, 226, 238);
+        --ds-color-fg-primary-muted: rgb(62, 177, 203);
+        --ds-color-fg-primary-default: rgb(12, 121, 154);
+        --ds-color-fg-primary-emphasis: rgb(236, 249, 252);
+
+        --ds-color-bg-primary-default: rgb(4, 70, 90);
+        --ds-color-bg-primary-mild: rgb(202, 239, 247);
+        --ds-color-bg-primary-soft: rgb(174, 226, 238);
+        --ds-color-bg-primary-muted: rgb(62, 177, 203);
+        --ds-color-bg-primary-mid: rgb(12, 121, 154);
+        --ds-color-bg-primary-emphasis: rgb(4, 70, 90);
+
+        --ds-color-border-primary-subtle: rgb(236, 249, 252);
+        --ds-color-border-primary-mild: rgb(202, 239, 247);
+        --ds-color-border-primary-soft: rgb(174, 226, 238);
+        --ds-color-border-primary-muted: rgb(62, 177, 203);
+        --ds-color-border-primary-default: rgb(12, 121, 154);
+        --ds-color-border-primary-emphasis: rgb(236, 249, 252);
+
+        /* Success */
+        --ds-color-fg-success-subtle: rgb(31, 42, 38);
+        --ds-color-fg-success-mild: rgb(207, 240, 218);
+        --ds-color-fg-success-soft: rgb(177, 230, 198);
+        --ds-color-fg-success-muted: rgb(59, 183, 132);
+        --ds-color-fg-success-default: rgb(18, 126, 97);
+        --ds-color-fg-success-emphasis: rgb(170, 235, 210);
+
+        --ds-color-bg-success-default: rgb(31, 42, 38);
+        --ds-color-bg-success-mild: rgb(207, 240, 218);
+        --ds-color-bg-success-soft: rgb(177, 230, 198);
+        --ds-color-bg-success-muted: rgb(59, 183, 132);
+        --ds-color-bg-success-mid: rgb(18, 126, 97);
+        --ds-color-bg-success-emphasis: rgb(170, 235, 210);
+
+        --ds-color-border-success-subtle: rgb(31, 42, 38);
+        --ds-color-border-success-mild: rgb(207, 240, 218);
+        --ds-color-border-success-soft: rgb(177, 230, 198);
+        --ds-color-border-success-muted: rgb(59, 183, 132);
+        --ds-color-border-success-default: rgb(18, 126, 97);
+        --ds-color-border-success-emphasis: rgb(170, 235, 210);
+
+        /* Danger */
+        --ds-color-fg-danger-subtle: rgb(50, 20, 20);
+        --ds-color-fg-danger-mild: rgb(90, 40, 40);
+        --ds-color-fg-danger-soft: rgb(140, 50, 50);
+        --ds-color-fg-danger-muted: rgb(251, 125, 126);
+        --ds-color-fg-danger-default: rgb(247, 210, 210);
+        --ds-color-fg-danger-emphasis: rgb(255, 245, 245);
+
+        --ds-color-bg-danger-default: rgb(50, 20, 20);
+        --ds-color-bg-danger-mild: rgb(90, 40, 40);
+        --ds-color-bg-danger-soft: rgb(140, 50, 50);
+        --ds-color-bg-danger-muted: rgb(251, 125, 126);
+        --ds-color-bg-danger-mid: rgb(247, 210, 210);
+        --ds-color-bg-danger-emphasis: rgb(255, 245, 245);
+
+        --ds-color-border-danger-subtle: rgb(140, 50, 50);
+        --ds-color-border-danger-mild: rgb(251, 125, 126);
+        --ds-color-border-danger-soft: rgb(247, 210, 210);
+        --ds-color-border-danger-muted: rgb(250, 227, 227);
+        --ds-color-border-danger-default: rgb(253, 245, 245);
+        --ds-color-border-danger-emphasis: rgb(255, 255, 255);
+
+        /* Warning, Insight, Attention — zelfde principe: tint behouden, basis donker, accenten lichter */
+        --ds-color-fg-warning-subtle: rgb(45, 32, 20);
+        --ds-color-fg-warning-mild: rgb(79, 51, 25);
+        --ds-color-fg-warning-soft: rgb(122, 69, 17);
+        --ds-color-fg-warning-muted: rgb(194, 115, 40);
+        --ds-color-fg-warning-default: rgb(255, 153, 0);
+        --ds-color-fg-warning-emphasis: rgb(255, 190, 87);
+
+        --ds-color-bg-warning-default: rgb(45, 32, 20);
+        --ds-color-bg-warning-mild: rgb(79, 51, 25);
+        --ds-color-bg-warning-soft: rgb(122, 69, 17);
+        --ds-color-bg-warning-muted: rgb(194, 115, 40);
+        --ds-color-bg-warning-mid: rgb(255, 153, 0);
+        --ds-color-bg-warning-emphasis: rgb(255, 190, 87);
+
+        --ds-color-border-warning-subtle: rgb(45, 32, 20);
+        --ds-color-border-warning-mild: rgb(79, 51, 25);
+        --ds-color-border-warning-soft: rgb(122, 69, 17);
+        --ds-color-border-warning-muted: rgb(194, 115, 40);
+        --ds-color-border-warning-default: rgb(255, 153, 0);
+        --ds-color-border-warning-emphasis: rgb(255, 190, 87);
+
+        --ds-color-fg-insight-subtle: rgb(36, 29, 35);
+        --ds-color-fg-insight-mild: rgb(53, 36, 51);
+        --ds-color-fg-insight-soft: rgb(82, 52, 78);
+        --ds-color-fg-insight-muted: rgb(140, 97, 133);
+        --ds-color-fg-insight-default: rgb(193, 143, 184);
+        --ds-color-fg-insight-emphasis: rgb(231, 193, 222);
+
+        --ds-color-bg-insight-default: rgb(36, 29, 35);
+        --ds-color-bg-insight-mild: rgb(53, 36, 51);
+        --ds-color-bg-insight-soft: rgb(82, 52, 78);
+        --ds-color-bg-insight-muted: rgb(140, 97, 133);
+        --ds-color-bg-insight-mid: rgb(193, 143, 184);
+        --ds-color-bg-insight-emphasis: rgb(231, 193, 222);
+
+        --ds-color-border-insight-subtle: rgb(36, 29, 35);
+        --ds-color-border-insight-mild: rgb(53, 36, 51);
+        --ds-color-border-insight-soft: rgb(82, 52, 78);
+        --ds-color-border-insight-muted: rgb(140, 97, 133);
+        --ds-color-border-insight-default: rgb(193, 143, 184);
+        --ds-color-border-insight-emphasis: rgb(231, 193, 222);
+
+        --ds-color-fg-attention-subtle: rgb(38, 34, 18);
+        --ds-color-fg-attention-mild: rgb(81, 61, 11);
+        --ds-color-fg-attention-soft: rgb(127, 96, 6);
+        --ds-color-fg-attention-muted: rgb(186, 144, 5);
+        --ds-color-fg-attention-default: rgb(238, 193, 37);
+        --ds-color-fg-attention-emphasis: rgb(255, 224, 105);
+
+        --ds-color-bg-attention-default: rgb(38, 34, 18);
+        --ds-color-bg-attention-mild: rgb(81, 61, 11);
+        --ds-color-bg-attention-soft: rgb(127, 96, 6);
+        --ds-color-bg-attention-muted: rgb(186, 144, 5);
+        --ds-color-bg-attention-mid: rgb(238, 193, 37);
+        --ds-color-bg-attention-emphasis: rgb(255, 224, 105);
+
+        --ds-color-border-attention-subtle: rgb(38, 34, 18);
+        --ds-color-border-attention-mild: rgb(81, 61, 11);
+        --ds-color-border-attention-soft: rgb(127, 96, 6);
+        --ds-color-border-attention-muted: rgb(186, 144, 5);
+        --ds-color-border-attention-default: rgb(238, 193, 37);
+        --ds-color-border-attention-emphasis: rgb(255, 224, 105);
+
+
+        /* Veldspecifiek */
+        --ds-color-field-border: var(--ds-color-border-default);
+        --ds-color-field-bg: var(--ds-color-bg-soft);
+        --ds-color-field-fg: var(--ds-color-fg-default);
+        --ds-color-field-outline-outer: var(--ds-color-border-primary-default);
+        --ds-color-field-outline-inner: var(--ds-color-border-primary-soft);
+        --ds-color-field-border-focus: var(--ds-color-border-primary-emphasis);
+        --ds-color-field-button-fg: var(--ds-color-fg-default);
+        --ds-color-field-button-fg-hover: var(--ds-color-fg-primary-subtle);
+        --ds-color-field-button-bg-hover: var(--ds-color-bg-primary-mid);
+        --ds-color-field-icon-fg: var(--ds-color-fg-muted);
+        --ds-color-field-icon-fg-hover: var(--ds-color-fg-primary-subtle);
+        --ds-color-field-label-fg: var(--ds-color-fg-muted);
+
+        /* Link */
+        --ds-link-fg-color: var(--ds-color-fg-primary-default);
+        --ds-link-bg-color: transparent;
+        --ds-link-text-decoration-color: var(--ds-link-fg-color);
+        --ds-link-hover-fg-color: var(--ds-color-fg-primary-emphasis);
+        --ds-link-hover-text-decoration-color: var(--ds-color-fg-primary-soft);
+        --ds-link-focus-fg-color: var(--ds-color-fg-primary-subtle);
+        --ds-link-focus-bg-color: var(--ds-color-bg-primary-mid);
+        --ds-link-focus-text-decoration-color: var(--ds-color-fg-primary-emphasis);
+
+    }
+}
+
+/* Page elements */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: var(--ds-text-family-primary), Roboto, Helvetica, sans-serif;
+    background-color: var(--ds-color-bg-default);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--ds-text-body-font-size);
+    font-weight: 400;
+    line-height: var(--ds-text-body-line-height);
+    color: var(--ds-color-fg-default);
+}
+
+
+#root {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin: 0 auto;
+    color: var(--ds-color-fg-default);
+}
+
+
+.control-pane {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    flex: 0 0 auto;
+    padding: var(--_ds-page-header-padding, calc(var(--ds-spacer-1x) * 4));
+    background-color: var(--ds-color-bg-subtle);
+    border-bottom: 1px solid var(--ds-color-border-default);
+}
+
+.header__navigation {
+    display: flex;
+    gap: calc(var(--ds-spacer-1x) * 2);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header__text {
+    color: var(--ds-color-fg-muted);
+}
+
+.header__text-title {
+    font-size: var(--ds-text-title-1-font-size) !important;
+    font-weight: 700;
+    line-height: var(--ds-text-title-1-font-line-height);
+    font-family: var(--ds-text-family-primary), Roboto, Helvetica, sans-serif;
+    margin-block-start: 0px !important;
+    margin-block-end: 0px !important;
+}
+
+.header__text-body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header__actions {
+    flex: 1 1 0px;
+    flex-wrap: nowrap;
+    max-width: max-content;
+    min-width: auto;
+    display: flex;
+    flex-shrink: 1;
+    align-items: center;
+    gap: calc(var(--ds-spacer-1x, 4px) * 2);
+    white-space: nowrap;
+}
+
+.header__container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-bottom: 0px;
+    min-width: 0;
+}
+
+#container {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+}
+
+#tool-frame {
+    flex: 1;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+/* Text */
+.url {
+    color: var(--ds-color-fg-primary-default);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--ds-color-fg-primary-default);
+}
+
+a {
+    color: var(--ds-color-fg-default);
+}
+
+h1 {
+    margin-block-end: 5px !important;
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+h2 {
+    margin-block-end: 5px !important;
+    color: var(--ds-color-fg-default);
+}
+
+h3 {
+    color: var(--ds-color-fg-default);
+}
+
+h4 {
+    color: var(--ds-color-fg-default);
+}
+
+p {
+    color: var(--ds-color-fg-default);
+}
+
+a {
+    color: var(--ds-color-fg-default);
+}
+
+/* Label */
+.label {
+    color: var(--ds-color-field-label-fg, var(--ds-color-fg-muted));
+    font-weight: 600 !important;
+}
+
+.error {
+    color: var(--ds-color-border-danger-default);
+    border: var(--ds-spacer-border) solid var(--ds-color-border-danger-default);
+    background-color: var(--ds-color-bg-danger-default);
+}
+
+/* Textbox */
+.textbox {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: var(--_ds-input-border-radius, calc(var(--ds-spacer-1x) * 2));
+    border: var(--ds-spacer-border) solid var(--ds-color-field-border, var(--ds-color-border-default));
+    color: var(--ds-color-field-fg, var(--ds-color-fg-default));
+    background-color: var(--ds-color-bg-default);
+}
+
+.textbox:hover:not(:disabled) {
+    box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width) var(--ds-color-bg-primary-soft);
+}
+
+input.textbox.error:hover {
+    box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width) var(--ds-color-fg-danger-soft);
+}
+
+.validation-feedback__message {
+    color: var(--ds-color-border-danger-default);
+    font-size: 0.875rem;
+    margin-top: 4px;
+    font-size: var(--ds-text-subtext-body-font-size);
+    font-weight: 400;
+    line-height: var(--ds-text-subtext-line-height);
+}
+
+/* Button Primary */
+.button.primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ds-color-bg-default);
+    color: var(--ds-color-fg-default);
+    border: var(--ds-spacer-border) solid var(--ds-color-border-default);
+    height: 36px;
+    border-radius:
+        var(--_ds-button-group-child-border-top-left-radius, calc(var(--ds-spacer-1x) * 2)) var(--_ds-button-group-child-border-top-right-radius, calc(var(--ds-spacer-1x) * 2)) var(--_ds-button-group-child-border-bottom-right-radius, calc(var(--ds-spacer-1x) * 2)) var(--_ds-button-group-child-border-bottom-left-radius, calc(var(--ds-spacer-1x) * 2));
+    min-width: var(--_ds-button-group-child-min-width);
+    max-height: var(--_ds-button-group-child-min-height);
+    padding: .6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.button.primary:hover:not(:disabled) {
+    box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width) var(--ds-color-bg-primary-soft);
+}
+
+.button.primary:active:not(:disabled) {
+    background-color: var(--ds-color-bg-primary-default);
+    color: var(--ds-color-fg-primary-emphasis);
+    border-color: var(--ds-color-border-primary-emphasis);
+}
+
+.button.primary:disabled {
+    cursor: not-allowed;
+    background-color: rgb(218, 218, 218);
+    filter: grayscale(50%);
+    opacity: 0.5;
+}
+
+/* Button Secundary */
+.button.secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--ds-color-bg-primary-mid);
+    border-color: var(--ds-color-border-primary-default);
+    color: var(--ds-color-fg-primary-subtle);
+    height: 36px;
+    border-radius:
+        var(--_ds-button-group-child-border-top-left-radius, calc(var(--ds-spacer-1x) * 2)) var(--_ds-button-group-child-border-top-right-radius, calc(var(--ds-spacer-1x) * 2)) var(--_ds-button-group-child-border-bottom-right-radius, calc(var(--ds-spacer-1x) * 2)) var(--_ds-button-group-child-border-bottom-left-radius, calc(var(--ds-spacer-1x) * 2));
+    min-width: var(--_ds-button-group-child-min-width);
+    max-height: var(--_ds-button-group-child-min-height);
+    padding: .6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.button.secondary:hover:not(:disabled) {
+    box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width) var(--ds-color-bg-primary-soft);
+}
+
+.button.secondary:active:not(:disabled) {
+    background-color: var(--ds-color-bg-primary-emphasis);
+}
+
+.button.secondary:disabled {
+    cursor: not-allowed;
+    filter: grayscale(50%);
+    opacity: 0.5;
+}
+
+/* Message block */
+.notification-info,
+.notification-warning,
+.notification-success,
+.notification-error {
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    border-radius: var(--_ds-input-border-radius, calc(var(--ds-spacer-1x) * 2));
+}
+
+.notification-error {
+    color: var(--ds-color-border-danger-default);
+    background-color: var(--ds-color-bg-danger-default);
+    border: var(--ds-spacer-border) solid var(--ds-color-border-danger-default);
+}
+
+.notification-success {
+    color: var(--ds-color-fg-success-emphasis);
+    background-color: var(--ds-color-bg-success-default);
+    border: var(--ds-spacer-border) solid var(--ds-color-border-success-default);
+}
+
+.notification-warning {
+    color: var(--ds-color-fg-warning-emphasis);
+    background-color: var(--ds-color-bg-warning-default);
+    border: var(--ds-spacer-border) solid var(--ds-color-border-warning-default);
+}
+
+.notification-info {
+    color: var(--ds-color-fg-primary-emphasis);
+    background-color: var(--ds-color-bg-primary-default);
+    border: var(--ds-spacer-border) solid var(--ds-color-border-primary-default);
+}
+
+.notification-title {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.notification-description {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Badge */
+.status-badge {
+    align-items: center;
+    justify-content: center;
+    gap: var(--ds-spacer-1x);
+    cursor: default;
+    flex-shrink: 0;
+    border-radius: var(--ds-spacer-radius-rounded);
+    padding: 0.10em 0.75em;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+}
+
+.status-badge.primary {
+    background-color: var(--ds-color-bg-primary-default);
+    border-color: var(--ds-color-border-primary-default);
+    color: var(--ds-color-fg-primary-emphasis);
+}
+
+.status-badge.secondary {
+    background-color: var(--ds-color-bg-subtle);
+    border-color: var(--ds-color-border-default);
+    color: var(--ds-color-fg-default);
+}
+
+.status-badge.success {
+    background-color: var(--ds-color-bg-success-default);
+    border-color: var(--ds-color-border-success-default);
+    color: var(--ds-color-fg-success-emphasis);
+}
+
+.status-badge.danger {
+    background-color: var(--ds-color-bg-danger-default);
+    border-color: var(--ds-color-border-danger-default);
+    color: var(--ds-color-border-danger-default);
+}
+
+.status-badge.warning {
+    background-color: var(--ds-color-bg-warning-default);
+    border-color: var(--ds-color-border-warning-default);
+    color: var(--ds-color-border-warning-default);
+}
+
+/* Assignment modal */
+.assignment-dialog .e-dlg-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.assignment-dialog .dialog-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+.assignment-dialog .grid-wrapper {
+    flex-grow: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.assignment-dialog.e-dialog {
+    min-width: 870px;
+    min-height: 500px;
+}
+
+/* Selector */
+.selector {
+    border: var(--ds-spacer-border) solid var(--ds-color-border-default);
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    min-height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--ds-color-fg-default);
+}
+
+.selector:hover {
+    box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width) var(--ds-color-bg-primary-soft);
+}
+
+.selector:active {
+    background-color: var(--ds-color-bg-primary-default);
+    border-color: var(--ds-color-border-primary-default);
+}
+
+/* Toggle button */
+.toggle-button-group {
+    display: flex;
+    justify-content: center;
+}
+
+.toggle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: var(--ds-color-bg-default);
+    color: var(--ds-color-fg-default);
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    height: 36px;
+    min-width: 5vw;
+    width: 7vw;
+    max-width: 8vw;
+    max-height: var(--_ds-button-group-child-min-height);
+    position: relative;
+}
+
+.toggle-button:hover {
+    box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width) var(--ds-color-bg-primary-soft);
+    background-color: var(--ds-color-bg-hover);
+    z-index: 2;
+}
+
+.toggle-button.selected {
+    background-color: var(--ds-color-bg-primary-default);
+    color: var(--ds-color-fg-primary-emphasis);
+}
+
+.toggle-button.selected::before,
+.toggle-button.selected::after {
+    content: '';
+    position: absolute;
+    bottom: 0%;
+    height: 3px;
+    background-color: var(--ds-color-border-primary-emphasis);
+    transition: all 0.3s ease;
+}
+
+.toggle-button.selected::before {
+    width: 40%;
+    left: 20%;
+}
+
+.toggle-button.selected::after {
+    width: 40%;
+    right: 20%;
+}
+
+.toggle-button:first-child {
+    border-radius: calc(var(--ds-spacer-1x) * 2) 0 0 calc(var(--ds-spacer-1x) * 2);
+    border-left: var(--ds-spacer-border) solid var(--ds-color-border-default);
+    border-bottom: var(--ds-spacer-border) solid var(--ds-color-border-default);
+    border-top: var(--ds-spacer-border) solid var(--ds-color-border-default);
+}
+
+.toggle-button:last-child {
+    border-radius: 0 calc(var(--ds-spacer-1x) * 2) calc(var(--ds-spacer-1x) * 2) 0;
+    border-right: var(--ds-spacer-border) solid var(--ds-color-border-default);
+    border-bottom: var(--ds-spacer-border) solid var(--ds-color-border-default);
+    border-top: var(--ds-spacer-border) solid var(--ds-color-border-default);
+    border-left: 0px;
+    margin-left: -2px;
+}
+
+.toggle-button:not(:first-child):not(:last-child) {
+    border-radius: 0;
+    border-bottom: var(--ds-spacer-border) solid var(--ds-color-border-default);
+    border-top: var(--ds-spacer-border) solid var(--ds-color-border-default);
+    border-left: 0px;
+    margin-left: -2px;
+}
+
+/* Sidebar */
+.orientation-stepper-section {
+    width: 32vh;
+    border-right: 1px solid #dadada;
+    overflow-y: auto;
+    flex-shrink: 0;
+    padding: 24px;
+    box-sizing: border-box;
+    display: 'flex';
+    justify-content: 'space-between';
+    background-Color: var(--ds-color-bg-default);
+    border-bottom: '1px solid #dadada';
+}
+
+.orientation-stepper-control {
+    height: 100%;
+}
+
+.stepper-box {
+    position: relative;
+    margin: 25px;
+    border: var(--ds-spacer-border) solid var(--ds-color-border-muted);
+    border-radius: var(--_ds-input-border-radius, calc(var(--ds-spacer-1x) * 2));
+    padding: 16px;
+    box-sizing: border-box;
+    transition: width 0.3s ease;
+    overflow: visible;
+}
+
+.stepper-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    padding-left: 0px;
+    color: var(--ds-color-fg-default);
+    margin: 0px;
+    padding: 0px;
+}
+
+.orientation-stepper-section .orientation-stepper-control:has(.e-vertical) {
+    min-height: 100%;
+    max-height: 100%;
+}
+
+.panel__header {
+    min-height: calc(var(--ds-spacer-1x, 4px) * 12 - var(--ds-spacer-border, 1px));
+    padding-block: calc(var(--ds-spacer-1x, 4px) - var(--ds-spacer-border, 1px)) var(--ds-spacer-1x, 4px);
+    display: grid;
+    height: max-content;
+    gap: calc(var(--ds-spacer-1x, 4px) * 4);
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    transition: padding-inline var(--_ds-panel-animation-duration) var(--_ds-panel-animation-function);
+}
+
+.e-stepper .e-stepper-progressbar>.e-progressbar-value {
+    background-color: var(--ds-color-bg-success-mid) !important;
+}
+
+.panel__header h2 {
+    font-size: var(--ds-text-title-3-font-size, 1.125rem);
+    font-weight: 600;
+    line-height: var(--ds-text-title-3-font-line-height, 1.3333333333);
+    font-family: var(--ds-text-family-primary, "Open Sans"), Roboto, Helvetica, sans-serif;
+    --ds-text-title-3-font-size: calc(18em / 16);
+    --ds-spacer-1x-em: calc(4em / 18);
+    align-self: start;
+    /*padding-top: calc(var(--ds-spacer-1x, 4px) * 3);*/
+}
+
+.stepper-box.collapsed {
+    width: 80px;
+}
+
+.collapse-toggle {
+    position: absolute;
+    top: 20px;
+    right: -16px;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--ds-spacer-radius-rounded);
+    background: var(--ds-color-bg-default) !important;
+    border: var(--ds-spacer-border) solid var(--ds-color-border-muted);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding: 0px !important;
+}
+
+.collapse-toggle:hover {
+    box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width) var(--ds-color-bg-primary-soft);
+    border-color: var(--ds-color-border-primary-emphasis)
+}
+
+.collapse-toggle .e-icons {
+    font-size: 16px;
+}
+
+/* Custom */
+.hidden {
+    visibility: hidden;
+}
