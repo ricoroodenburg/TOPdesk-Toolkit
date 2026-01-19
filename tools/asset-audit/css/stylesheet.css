@@ -1,135 +1,173 @@
 @import "../../../css/stylesheet.css";
 
-/* Stepper */
-/* --- HORIZONTAL TAILWIND-LIKE STEPPER --- */
-
 #stepList {
     list-style: none;
     margin: 0;
     padding: 0;
-
     display: flex;
-    flex-direction: row;
-    gap: 2rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
 }
 
-/* LI container */
+/* Container per stap */
 #stepList li {
+    text-align: center;
     flex: 1;
     position: relative;
-    padding-top: 2rem;
-    /* ruimte voor lijn */
+    
 }
 
-#stepList li.completed,
-#stepList li.active {
-    cursor: pointer;
-}
-
-#stepList li.inactive {
-    cursor: default;
-}
-
-/* STEP LINE (default grey) */
-#stepList li::before {
-    content: "";
-    position: absolute;
-    top: 0.75rem;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--ds-color-fg-default);
-    border-radius: 2px;
-}
-
-/* STEP TITLE */
-#stepList li .step-label {
-    font-size: 0.9rem;
+/* Bolletje */
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--ds-color-fg-default, rgb(64, 64, 64));
+    background-color: var(--ds-color-bg-default, rgb(255, 255, 255));
     font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+        border: var(--ds-spacer-border, 1px) solid var(--ds-color-border-default, rgb(137, 137, 137));
+    border-radius: var(--ds-spacer-radius-rounded, 9999px);
+    
+}
+
+.step-label {
+    margin-top: 0.5rem;
+    font-weight: 500;
     color: var(--ds-color-fg-default);
 }
 
-/* STEP DESCRIPTION */
-#stepList li .step-desc {
+.step-desc {
+    color: var(--ds-color-fg-default);
+    opacity: 0.6;
     font-size: 0.8rem;
     margin-top: 0.25rem;
-    color: var(--ds-color-fg-default);
 }
 
-/* ACTIVE STEP */
+/* ACTIVE */
+#stepList li.active .step-circle {
+    background-color: var(--ds-color-bg-primary-mid, rgb(12, 121, 154));
+    color: var(--ds-color-fg-primary-subtle, rgb(236, 249, 252));
+    border-color: var(--ds-color-border-primary-default, rgb(12, 121, 154));
+}
+
 #stepList li.active .step-label {
     color: var(--ds-color-bg-primary-mid);
 }
 
-#stepList li.active::before {
-    background: var(--ds-color-bg-primary-mid);
+#stepList li.active::after {
+    background: var(--ds-color-bg-primary-mild);
 }
 
-/* COMPLETED STEP */
+#stepList li.active .step-circle[aria-disabled="false"]:hover {
+    box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width, 4px) var(--ds-color-bg-primary-soft);
+    border-color: var(--ds-color-border-primary-emphasis);
+    cursor: pointer;
+}
+
+#stepList li.active .step-circle[aria-disabled="false"]:active {
+    background-color: var(--ds-color-bg-primary-emphasis, rgb(4, 70, 90));
+    color: var(--ds-color-fg-primary-subtle, rgb(236, 249, 252));
+    border-color: var(--ds-color-border-primary-emphasis, rgb(4, 70, 90));
+}
+
+/* COMPLETED */
+#stepList li.completed .step-circle {
+    background-color: var(--ds-color-bg-success-mid, rgb(18, 126, 97));
+    color: var(--ds-color-fg-success-subtle, rgb(239, 249, 242));
+    border-color: var(--ds-color-border-success-default, rgb(18, 126, 97));
+}
+
 #stepList li.completed .step-label {
     color: var(--ds-color-bg-success-mid);
 }
 
-#stepList li.completed::before {
+#stepList li.completed::after {
     background: var(--ds-color-bg-success-mid);
-
 }
 
-/* UPCOMING STEP */
-#stepList li.inactive .step-label {
-    color: var(--ds-color-fg-primary-default);
+#stepList li.completed .step-circle[aria-disabled="false"]:hover {
+    box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width, 4px) var(--ds-color-bg-success-soft);
+    border-color: var(--ds-color-bg-success-mid);
+    cursor: pointer;
 }
 
-#stepList li.inactive::before {
-    background: var(--ds-color-bg-primary-mild)
+#stepList li.completed .step-circle[aria-disabled="false"]:active {
+    background-color: var(--ds-color-bg-success-emphasis, rgb(6, 73, 55));
+    color: var(--ds-color-fg-success-subtle, rgb(239, 249, 242));
+    border-color: var(--ds-color-border-success-emphasis, rgb(6, 73, 55));
+}
+
+/* INACTIVE */
+#stepList li.inactive::after {
+    background: var(--ds-color-bg-primary-mild);
+}
+
+#stepList li.inactive .step-circle[aria-disabled="false"]:hover {
+    box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width, 4px) var(--ds-color-bg-primary-soft, rgb(174, 226, 238));
+    border-color: var(--ds-color-border-primary-emphasis, rgb(4, 70, 90));
+    cursor: pointer;
+}
+
+#stepList li.inactive .step-circle[aria-disabled="false"]:active {
+    background-color: var(--ds-color-bg-primary-default, rgb(236, 249, 252));
+    color: var(--ds-color-fg-primary-emphasis, rgb(4, 70, 90));
+    border-color: var(--ds-color-border-primary-emphasis, rgb(4, 70, 90));
+}
+
+/* INVALID STEP */
+#stepList li.invalid .step-circle {
+    background: var(--ds-color-bg-danger-mid, #FF4D4F); /* rood */
+    color: white;
+    border: 2px solid var(--ds-color-bg-danger-dark, #B71C1C);
+}
+
+#stepList li.invalid .step-label {
+    color: var(--ds-color-bg-danger-mid, #FF4D4F);
 }
 
 
-/* --- MOBILE = VERTICAAL --- */
-
-@media (max-width: 768px) {
-    #stepList {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    #stepList li {
-        text-align: left;
-        padding-left: 1rem;
-        padding-top: 0;
-    }
-
-    #stepList li::before {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        height: 2px;
-        right: auto;
-        width: 40px;
-    }
-
-    #stepList li .step-label {
-        margin-left: 3rem;
-    }
+.step-line {
+    position: absolute;
+    top: 22px;        /* midden van 40px bol = 20px + 2px lijn offset */
+    left: 50%;        /* begin bij het midden van de bol */
+    height: calc(var(--ds-spacer-1x, 4px) / 2);
+    width: 100%;
+    /*background: var(--ds-color-bg-primary-mild);*/
+    background: rgb(137, 137, 137);
+    z-index: 1;
+    transition: width 0.45s ease, background 0.45s ease;
+    
 }
-  /* Scroll-container neemt alle ruimte behalve footer */
-  .scroll-container {
-    flex: 1 1 auto;          /* neemt beschikbare ruimte */
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;        /* scrollen indien nodig */
-    padding: 25px;
-  }
 
-  /* Footer krijgt vaste ruimte onderaan */
-  .footer {
-    flex: 0 0 auto;          /* vaste hoogte, niet meeschalen */
-    display: flex;
-    justify-content: space-between;
-    padding: 25px;
-  }
+#stepList li:last-child .step-line {
+    display: none; /* geen lijn na laatste bol */
+}
 
+/* Scroll-container neemt alle ruimte behalve footer */
+.scroll-container {
+flex: 1 1 auto;          /* neemt beschikbare ruimte */
+display: flex;
+flex-direction: column;
+overflow-y: auto;        /* scrollen indien nodig */
+padding: 25px;
+}
 
+/* Footer krijgt vaste ruimte onderaan */
+.footer {
+flex: 0 0 auto;          /* vaste hoogte, niet meeschalen */
+display: flex;
+justify-content: space-between;
+padding: 25px;
+}
 
 /* Summarize */
 .summarize_block_error,

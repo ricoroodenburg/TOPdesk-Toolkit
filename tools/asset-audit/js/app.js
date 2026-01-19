@@ -84,7 +84,7 @@ function updateButtons() {
     nextBtn.style.display = wizardState.currentStep === 7 ? "none" : "";
     document.getElementById('stepList').style.display = wizardState.currentStep === 7 ? "none" : "";
 
-    // 3️⃣ Highlight de stappen opnieuw op basis van stepsValid
+    // Highlight de stappen opnieuw op basis van stepsValid
     highlightStep(wizardState.currentStep);
 
     // --- LI cursors live updaten ---
@@ -94,7 +94,7 @@ function updateButtons() {
 
     document.querySelectorAll('#stepList li').forEach((li, index) => {
         let clickable = false;
-
+        
         if (index === currentStep) {
             clickable = true; // huidige stap altijd pointer
         } else if (wizardState.stepsValid[index]) {
@@ -102,8 +102,17 @@ function updateButtons() {
         } else if (index === nextStepIndex && currentValid) {
             clickable = true; // volgende stap pointer **alleen als huidige geldig**
         }
-
+        /*
         li.style.cursor = clickable ? 'pointer' : 'default';
+        */
+         // aria-disabled voor CSS
+        li.setAttribute('aria-disabled', clickable ? 'false' : 'true');
+
+        // alternatief: ook op bolletje zelf
+        const circle = li.querySelector('.step-circle');
+        if (circle) {
+            circle.setAttribute('aria-disabled', clickable ? 'false' : 'true');
+        }
 
     });
 
@@ -116,11 +125,13 @@ function renderStepList() {
     wizardState.steps.forEach((step, index) => {
         if (step.hidden) return;
         const li = document.createElement('li');
-        //li.textContent = step.title || `Step ${index + 1}`;
         li.innerHTML = `
-            <div class="step-label">Step ${index + 1}</div>
-            <div class="step-desc">${step.title || ""}</div>
+            <div class="step-circle">${index + 1}</div>
+            <div class="step-label">${step.title || `Step ${index + 1}`}</div>
+            <div class="step-desc">${step.description || ""}</div>
+            <span class="step-line"></span>
         `;
+
 
         li.setAttribute("data-step-number", index + 1);
 
@@ -140,21 +151,8 @@ function renderStepList() {
 }
 
 
-/*
 function highlightStep(index) {
-    document.querySelectorAll('#stepList li').forEach((li, i) => {
-        li.classList.remove('active', 'completed', 'inactive');
-
-        if (i < index && wizardState.stepsValid[i]) {
-            li.classList.add('completed'); // vorige stappen die voltooid zijn
-        } else if (i === index) {
-            li.classList.add('active'); // huidige stap
-        } else {
-            li.classList.add('inactive'); // nog niet bereikt
-        }
-    });
-}*/
-function highlightStep(index) {
+    
     document.querySelectorAll('#stepList li').forEach((li, i) => {
         li.classList.remove('active', 'completed', 'inactive');
 
@@ -168,16 +166,22 @@ function highlightStep(index) {
             li.classList.add('inactive'); // nog niet bereikt of invalid
         }
     });
+    updateStepLines();
 }
+function updateStepLines() {
+    const lis = document.querySelectorAll("#stepList li");
 
+    lis.forEach((li, i) => {
+        const line = li.querySelector(".step-line");
+        if (!line) return;
 
-/*
-function toggleStepper() {
-    const stepper = document.getElementById('wizard-stepper');
-    stepper.classList.toggle('collapsed');
+        // standaard grijs
+        //line.style.width = "100%";
+        //line.style.background = "var(--ds-color-bg-primary-mild)";
 
-    const btn = document.getElementById('collapseStepper');
-    btn.textContent = stepper.classList.contains('collapsed') ? "⇨" : "⇦";
+        // check of **de stap zelf valid is**, niet alleen class
+        if (wizardState.stepsValid[i]) {
+            line.style.background = "var(--ds-color-bg-success-mid)";
+        }
+    });
 }
-
-*/
