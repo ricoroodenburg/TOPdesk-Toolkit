@@ -1,5 +1,3 @@
-console.log("Hier ben ik");
-
 import { step1 } from './steps/step1.js';
 import { step2 } from './steps/step2.js';
 import { step3 } from './steps/step3.js';
