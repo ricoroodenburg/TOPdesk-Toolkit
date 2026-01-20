@@ -34,7 +34,7 @@ export const step2 = {
                     <div class="validation-feedback__message" id="error-password"></div>
                     <input id="td-password" class="textbox" placeholder="Application Password" required type="password">
                 </div>
-                <button class="button secondary popup-action-btn">Connect</button>
+                <button class="button secondary" id="td-login-btn">Connect</button>
                 <br>
                 <div id="td-login-status" class="mt-3"></div>
             </div>

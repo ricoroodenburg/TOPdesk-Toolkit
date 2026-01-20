@@ -1,3 +1,4 @@
+/*
 import { state } from './components/state.js';
 import { topdeskPopupHTML, setupTopdeskPopup } from './topdeskSignInPopup.js';
 
@@ -17,3 +18,5 @@ btnSignInTopdesk.addEventListener("click", () => {
   // 2. Voeg event listener toe op de action button
   setupTopdeskPopup();
 });
+
+*/
