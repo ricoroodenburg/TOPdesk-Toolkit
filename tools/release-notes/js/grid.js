@@ -3,11 +3,13 @@ async function initGrid() {
 
         const data = await loadData();
 
+        /*
         const toolbarOptions = [
             { text: "Search", align: 'Left' },
             { text: t('terms.expandAll'), align: 'Right', tooltipText: t('tooltips.expandAll'), prefixIcon: 'e-chevron-down', id: 'expandall' },
             { text: t('terms.collapseAll'), align: 'Right', tooltipText: t('tooltips.collapseAll'), prefixIcon: 'e-chevron-up', id: 'collapseall' }
         ];
+        */
 
         const filterSettings = {
             type: 'Excel'
@@ -38,8 +40,8 @@ async function initGrid() {
             allowFiltering: true,
             filterSettings: filterSettings,
             allowGrouping: true,
-            toolbar: toolbarOptions,
-            toolbarClick: clickHandler,
+            //toolbar: toolbarOptions,
+            //toolbarClick: clickHandler,
             groupSettings: { columns: ['releaseDate'], showDropArea: false, captionTemplate: '#captiontemplate' },
             allowResizing: true,
             allowReordering: true,
@@ -88,10 +90,25 @@ async function initGrid() {
 
         grid.appendTo('#grid');
 
+        document.getElementById("globalSearch").addEventListener("keyup", e => {
+            grid.search(e.target.value);
+        });
+
+        document.getElementById("expandall").addEventListener("click", () => {
+            grid.groupModule.expandAll();
+        });
+
+        document.getElementById("collapseall").addEventListener("click", () => {
+            grid.groupModule.collapseAll();
+        });
+
+
     } catch (e) {
         console.error("Failed to initialize grid:", e);
     }
 }
+
+/*
 
 function clickHandler(args) {
     switch (args.item.id) {
@@ -112,6 +129,7 @@ function clickHandler(args) {
     };
 
 }
+*/
 
 function template(args) {
     const date = args.key;

@@ -11,60 +11,83 @@
     <script src="./js/listview.js"></script>
     <script src="../../js/components/popup.js"></script>
 </head>
-<div class="header-toolbar">
-    <div id="buttonToolbar">
-        <button class="button" id="btn1">
-            <span class="button-content">
-                <span class="svg-button-grid"></span>
-            </span>
-        </button>
-        <button class="button" id="btn2">
-            <span class="button-content">
-                <span class="svg-button-calender"></span>
-            </span>
-        </button>
-    </div>
-</div>
 <div class="content-desktop" style="padding: 25px">
     <script id="captiontemplate" type="text/x-template">
 					${template(data)}
 				</script>
-    <div id="grid"></div>
-    <div id="calendar"></div>
+    <div class="grid-wrapper">
+        <div class="global-toolbar">
+
+            <div class="toolbar-left hide-when-calendar">
+                <input type="text" id="globalSearch" placeholder="Search" class="textbox toolbar" />
+            </div>
+
+            <div class="toolbar-right">
+                <div class="button-group hide-when-calendar">
+                    <button id="expandall" class="button primary grouped">Expand all</button>
+                    <button id="collapseall" class="button primary grouped">Collapse all</button>
+                </div>
+
+                <div class="button-group">
+                    <button class="button primary grouped" id="btn1">
+                        <span class="button-content">
+                            <span class="svg-button-grid"></span>
+                        </span>
+                    </button>
+
+                    <button class="button primary grouped" id="btn2">
+                        <span class="button-content">
+                            <span class="svg-button-calender"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="grid"></div>
+        <div id="calendar"></div>
+    </div>
+
 </div>
 <div class="content-mobile">
     <div id="listview"></div>
 </div>
 <script>
 
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-        const btnGrid = document.getElementById("btn1");
-        const btnCal = document.getElementById("btn2");
+    const btnGrid = document.getElementById("btn1");
+    const btnCal = document.getElementById("btn2");
 
-        const divGrid = document.getElementById("grid");
-        const divCal = document.getElementById("calendar");
+    const divGrid = document.getElementById("grid");
+    const divCal = document.getElementById("calendar");
 
+    divGrid.classList.add("view-active");
+    btnGrid.classList.add("selected");
+
+    btnGrid.addEventListener("click", function () {
+        // View toggling
         divGrid.classList.add("view-active");
+        divCal.classList.remove("view-active");
+
         btnGrid.classList.add("selected");
+        btnCal.classList.remove("selected");
 
-        btnGrid.addEventListener("click", function () {
-            divGrid.classList.add("view-active");
-            divCal.classList.remove("view-active");
-
-            btnGrid.classList.add("selected");
-            btnCal.classList.remove("selected");
-
-        });
-
-        btnCal.addEventListener("click", function () {
-            divCal.classList.add("view-active");
-            divGrid.classList.remove("view-active");
-
-            btnCal.classList.add("selected");
-            btnGrid.classList.remove("selected");
-
-        });
-
+        // Toolbar visibility
+        document.body.classList.remove("calendar-view-active");
     });
+
+    btnCal.addEventListener("click", function () {
+        // View toggling
+        divCal.classList.add("view-active");
+        divGrid.classList.remove("view-active");
+
+        btnCal.classList.add("selected");
+        btnGrid.classList.remove("selected");
+
+        // Toolbar visibility
+        document.body.classList.add("calendar-view-active");
+    });
+
+});
+
 </script>

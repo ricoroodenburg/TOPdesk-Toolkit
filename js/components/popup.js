@@ -1,4 +1,4 @@
-function showPopup(title = "", content = "") {
+function showPopup(title = "", content = "", action = null, options = { showClose: true }) {
     let popup = document.querySelector("#popup");
     if (!popup) {
         popup = document.createElement("div");
@@ -16,7 +16,8 @@ function showPopup(title = "", content = "") {
                 </div>
                 <div class="popup-content"></div>
                 <div class="popup-footer">
-                    <button class="button primary">${t('terms.close')}</button>
+                    <button class="button primary popup-close-btn">${t('terms.close')}</button>
+                    <button class="button secondary popup-action-btn"></button>
                 </div>
             </div>
         `;
@@ -35,11 +36,15 @@ function showPopup(title = "", content = "") {
         closeX.dataset.bound = "true";
     }
 
-    // Footer button
-    const closeBtn = popup.querySelector("button.button.primary");
-    if (closeBtn && !closeBtn.dataset.bound) {
-        closeBtn.addEventListener("click", hidePopup);
-        closeBtn.dataset.bound = "true";
+    // Footer close button
+    const closeBtn = popup.querySelector(".popup-close-btn");
+    if (closeBtn) {
+        closeBtn.style.display = options.showClose ? "visible" : "none";
+
+        if (!closeBtn.dataset.bound && options.showClose) {
+            closeBtn.addEventListener("click", hidePopup);
+            closeBtn.dataset.bound = "true";
+        }
     }
 
     // Overlay click
@@ -55,6 +60,29 @@ function showPopup(title = "", content = "") {
             if (e.key === "Escape") hidePopup();
         });
         popup.dataset.escBound = "true";
+    }
+
+    // -------------------------------------
+    // NEW: Optional Action Button
+    // -------------------------------------
+    const actionBtn = popup.querySelector(".popup-action-btn");
+
+    if (action && action.label) {
+        actionBtn.textContent = action.label;
+        //actionBtn.style.display = "inline-block";
+
+        // remove old handler
+        const newBtn = actionBtn.cloneNode(true);
+        actionBtn.replaceWith(newBtn);
+
+        // voeg nieuwe handler toe
+        newBtn.addEventListener("click", () => {
+            if (typeof action.onClick === "function") {
+                action.onClick();
+            }
+        });
+    } else {
+        actionBtn.style.display = "none";
     }
 
     // Show popup
@@ -75,7 +103,11 @@ function injectPopupStyles() {
     const style = document.createElement("style");
     style.id = "popup-styles";
     style.textContent = `
-
+        .popup-footer {
+            display: flex;
+            gap: 12px; /* ruimte tussen buttons */
+        }
     `;
+
     document.head.appendChild(style);
 }

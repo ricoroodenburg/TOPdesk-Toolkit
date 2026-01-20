@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOPdesk Toolkit</title>
   <link rel="stylesheet" href="css/stylesheet.css">
+  <script type="module" src="./js/main.js"></script>
   <script src="./js/components/popup.js"></script>
    <script src="./js/components/i18n.js"></script>
 
@@ -76,6 +77,14 @@
 
           </div>
 
+          <!--
+              <div class="sidebar-footer">
+      <button class="button primary" id="btnSignInTopdesk">
+        Sign in with TOPdesk
+      </button>
+    </div>
+  -->
+
         </div>
       </aside>
 
@@ -87,6 +96,7 @@
 
 </body>
 <script>
+
   document.addEventListener('DOMContentLoaded', () => {
     const sidenav = document.getElementById('sidebar');
     const iframe = document.getElementById('tool-frame');
@@ -142,10 +152,12 @@
   });
 
   document.addEventListener("DOMContentLoaded", () => {
+    
     const btn = document.querySelector("#btAbout");
     btn.addEventListener("click", () => {
-      showPopup(`${t('terms.about')} ${t('header.title')}`, "<p>Dit is de inhoud van de popup.</p>");
+      showPopup(`${t('terms.about')} ${t('header.title')}`, "<p>Dit is de inhoud van de popup.</p>"),'';
     });
+
   });
 
 </script>

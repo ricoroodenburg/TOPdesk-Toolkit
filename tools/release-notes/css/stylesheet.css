@@ -1,5 +1,4 @@
 @import "../../../css/stylesheet.css";
-
 .content {
   flex: 1;
   overflow-y: auto;
@@ -15,24 +14,100 @@
   overflow: auto;
 }
 
-#grid {
-  height: 100%;
+.grid-wrapper {
+    height: calc(100vh - 38px); /* buitenste padding weghalen */
+    display: flex;
+    flex-direction: column;
 }
 
-#buttonToolbar {
-    display: flex;      /* Buttons naast elkaar */
-    gap: 0px;           /* Geen ruimte tussen buttons */
-    margin: 0;          /* Margin niet nodig bij fixed, gebruik top/right */
-    
+#grid {
+    flex: 1 1 auto;
+    min-height: 0;
 }
+
+
 
 /* Plaats een container rond je content en buttons */
-.header-toolbar {
+.global-toolbar {
     display: flex;
-    justify-content: flex-end; /* Duw alles naar rechts */
-    margin: 20px;              /* Afstand van de randen */
-    gap: 10px;                 /* Ruimte tussen buttons */
+    justify-content: space-between; /* Links ↔︎ Rechts */
+    align-items: center;
+    margin-bottom: 5px;
 }
+
+.toolbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.input, .toolbar{
+  margin-top: unset !important;
+  margin-bottom: unset !important;
+}
+
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Ruimte tussen knoppen */
+}
+
+.button-group {
+    display: inline-flex;
+    border: 1px solid var(--ds-color-border-default) !important;
+    border-radius: 8px;
+}
+
+.button-group .grouped {
+    border: none;
+    border-right: none !important;
+    background: white;
+    padding: 8px 12px;
+}
+
+.button-group .grouped:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+/* Laatste button: geen border-right */
+.button-group .grouped:last-child {
+    border-radius: 0 8px 8px 0;
+    border-right: none !important;
+}
+
+.button-group .grouped:hover {
+  z-index: 2;
+  box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width) var(--ds-color-bg-primary-soft);
+}
+
+.button-group .grouped:focus-visible {
+  box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width) var(--ds-color-bg-primary-soft);
+  border-color: var(--ds-color-border-primary-emphasis);
+  outline: var(--ds-interactive-outline-ring-width) solid var(--ds-color-border-primary-emphasis);
+  outline-offset: calc(var(--ds-interactive-focus-ring-width) - var(--ds-interactive-outline-ring-width));
+}
+
+
+.button.selected {
+  color: var(--ds-color-fg-primary-emphasis);
+  background-color: var(--ds-color-bg-primary-default);
+  border-color: var(--ds-color-border-primary-emphasis);
+  /*border-left: var(--ds-spacer-border) solid var(--ds-color-border-default) !important;*/
+}
+
+.button-content {
+  border-bottom: var(--_ds-toggle-button-content-spacing-block, calc(var(--ds-spacer-1x) - var(--ds-spacer-border))) solid transparent;
+  padding-top: var(--_ds-toggle-button-content-spacing-block, calc(var(--ds-spacer-1x) - var(--ds-spacer-border)));
+  height: 100%;
+  line-height: var(--_ds-toggle-button-content-line-height, inherit);
+}
+
+
+
+.button.selected .button-content {
+  border-bottom-color: var(--ds-color-border-primary-emphasis);
+  border-bottom-width: 3px;
+}
+
 
 
 @media (max-width: 600px) {
@@ -43,39 +118,9 @@
   }
 }
 
-#buttonToolbar .button {
-  margin: 0;
-  border-radius: 0;
-  padding: 8px 12px;
-  position: relative;
-}
-
-#buttonToolbar .button+.button {
-  border-left: none;
-}
-
-#buttonToolbar .button:hover {
-  z-index: 2;
-  box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width) var(--ds-color-bg-primary-soft);
-  border-left: var(--ds-spacer-border) solid var(--ds-color-border-default);
-}
-
-#buttonToolbar .button:focus-visible {
-  box-shadow: 0 0 0 var(--ds-interactive-focus-ring-width) var(--ds-color-bg-primary-soft);
-  border-color: var(--ds-color-border-primary-emphasis);
-  outline: var(--ds-interactive-outline-ring-width) solid var(--ds-color-border-primary-emphasis);
-  outline-offset: calc(var(--ds-interactive-focus-ring-width) - var(--ds-interactive-outline-ring-width));
-}
-
-
-#buttonToolbar .button:first-child {
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-}
-
-#buttonToolbar .button:last-child {
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
+body.calendar-view-active .hide-when-calendar {
+    visibility: hidden !important;
+    pointer-events: none;
 }
 
 /* TOPdesk SVG Buttons */
@@ -118,24 +163,6 @@
   display: block !important;
 }
 
-.button.selected {
-  color: var(--ds-color-fg-primary-emphasis);
-  background-color: var(--ds-color-bg-primary-default);
-  border-color: var(--ds-color-border-primary-emphasis);
-  border-left: var(--ds-spacer-border) solid var(--ds-color-border-default) !important;
-}
-
-.button-content {
-  border-bottom: var(--_ds-toggle-button-content-spacing-block, calc(var(--ds-spacer-1x) - var(--ds-spacer-border))) solid transparent;
-  padding-top: var(--_ds-toggle-button-content-spacing-block, calc(var(--ds-spacer-1x) - var(--ds-spacer-border)));
-  height: 100%;
-  line-height: var(--_ds-toggle-button-content-line-height, inherit);
-}
-
-.button.selected .button-content {
-  border-bottom-color: var(--ds-color-border-primary-emphasis);
-  border-bottom-width: 3px;
-}
 
 
 .content-desktop {

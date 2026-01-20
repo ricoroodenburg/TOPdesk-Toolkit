@@ -44,8 +44,8 @@
 
 .e-checkbox-wrapper .e-frame.e-check,
 .e-css.e-checkbox-wrapper .e-frame.e-check {
-    background-color: var(--ds-color-option-checkbox-bg, var(--ds-color-bg-default)) !important;
-
+    background-color: var(--ds-color-bg-primary-emphasis) !important;
+    color: var(--ds-color-fg-primary-subtle);
 }
 
 .e-listbox-wrapper:not(.e-list-template) .e-list-item {

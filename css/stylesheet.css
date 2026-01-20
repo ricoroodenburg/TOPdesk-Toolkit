@@ -622,8 +622,8 @@ a {
 
 h1 {
     margin-block-end: 5px !important;
-    font-size: 3.2em;
-    line-height: 1.1;
+    font-size: 3.2em !important;
+    line-height: 1.1 ;
 }
 
 h2 {
@@ -1098,9 +1098,12 @@ input.textbox.error:hover {
 }
 
 /* Sidenav */
+
+
 .sidebar-menu {
     display: flex;
     flex-direction: column;
+    flex: 1; /* neemt de beschikbare ruimte in */
 }
 
 .sidebar-item {
@@ -1113,6 +1116,14 @@ input.textbox.error:hover {
     border-left: 4px solid transparent;
     /*transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;*/
 }
+
+.sidebar-footer {
+  padding: 16px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+
 
 /* ICON */
 .sidebar-icon {
