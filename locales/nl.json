@@ -7,6 +7,7 @@
     "more": "Meer",
     "search": "Zoeken",
     "about": "Over",
+    "aboutMessage": "Dit product is niet ontwikkeld, ondersteund of gelinkt aan TOPdesk. Alleen best-effort.",
     "release": "Versie",
     "releaseDate": "Datum van uitgave",
     "description": "Beschrijving",
@@ -25,7 +26,9 @@
     "statusPage": "Statuspagina",
     "home": "Start",
     "assetAudit": "Asset Audit",
+    "assetAuditMessage": "Integratie met Microsoft Intune",
     "releaseNotes": "Release Notes",
+    "releaseNotesMessage": "Ontdek de nieuwste TOPdesk-updates",
     "menu": "Menu",
     "welcome": "Welkom",
     "letsGetStarted": "Welkom",
@@ -43,7 +46,10 @@
     "tryingConnectWith": "Proberen om verbinding te maken met",
     "version": "Versie",
     "success": "Succes",
-    "error":"Error"
+    "error": "Error",
+    "betaNotice": "Bètamelding",
+    "betaNoticeMessage": "Deze site is in vroege toegang en nog in ontwikkeling. Functies kunnen incompleet of onstabiel zijn.",
+    "welcomeMessage": "Dit is de TOPdesk Toolkit, ontworpen om je snel toegang te geven tot handige tools zoals Asset Audit geïntegreerd met Microsoft Intune, en om de nieuwste TOPdesk-releases eenvoudig te verkennen."
   },
   "tooltips": {
     "more": "Meer",
@@ -77,7 +83,7 @@
     "username": "Gebruikersnaam",
     "applicationPassword": "Applicatiewachtwoord"
   },
-  "welcomePage":{
+  "welcomePage": {
     "header": "Welkom!",
     "message": "Deze wizard helpt je verbinding te maken met je TOPdesk- en Microsoft Intune-omgeving om middelen te controleren met gegevens uit Microsoft Intune.",
     "feature1": "Volledig overzicht van middelen, gefilterd op sjablonen en status. Uit te breiden met alle extra velden",

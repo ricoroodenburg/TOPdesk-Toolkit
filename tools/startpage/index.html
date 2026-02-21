@@ -11,51 +11,41 @@
 <body style="padding: 25px">
 
     <div class="content-desktop">
-     <div style="margin-top: 1rem">
-                    <div class="notification-warning">
-                        <strong class="notification-title">Beta Notice</strong>
-                        <p class="notification-description">This site is in early access and still under development. Features may be incomplete or unstable.</p>
-                    </div>
-                </div>
-
-    <h2 data-i18n="terms.welcome"></h2>
-    <p>This is the <strong>TOPdesk Toolkit</strong>, designed to give you quick access to handy tools like Asset Audit
-        integrated with Microsoft Intune, and to explore the latest TOPdesk releases easily.</p>
-
-    <h2>Available Tools</h2>
-    <div class="tool-list">
-        <div class="tool-card" onclick="openTool('asset-audit')">
-            <div class="tool-icon"><i class="fa-solid fa-cubes"></i></div>
-            <div class="tool-title">Asset Audit</div>
-            <div class="tool-desc">Microsoft Intune integration</div>
+        <div style="margin-top: 1rem">
+            <div class="notification-warning">
+                <strong class="notification-title" data-i18n="terms.betaNotice"></strong>
+                <p class="notification-description" data-i18n="terms.betaNoticeMessage"></p>
+            </div>
         </div>
 
-        <div class="tool-card" onclick="openTool('release-notes')">
-            <div class="tool-icon"><i class="fa-solid fa-file-lines"></i></div>
-            <div class="tool-title">Release Notes</div>
-            <div class="tool-desc">Discover the latest TOPdesk updates</div>
+        <h2 data-i18n="terms.welcome"></h2>
+        <p data-i18n="terms.welcomeMessage"></p>
+
+        <h2>Available Tools</h2>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; overflow-y: auto; padding: 10px;">
+            <div class="selector" onclick="openTool('asset-audit')">
+                <div><b data-i18n="terms.assetAudit"></b></div>
+                <div style="font-size: 12px;"><i data-i18n="terms.assetAuditMessage"></i></div>
+            </div>
+            <div class="selector" onclick="openTool('release-notes')">
+                <div><b data-i18n="terms.releaseNotes"></b></div>
+                <div style="font-size: 12px;"><i data-i18n="terms.releaseNotesMessage"></i></div>
+            </div>
         </div>
 
-        <!-- Voeg extra tools hier toe -->
-    </div>
+        <script>
+            function openTool(toolName) {
+                const iframe = parent.document.getElementById('tool-frame');
+                if (iframe) {
+                    iframe.src = `tools/${toolName}/index.html`;
 
-    <div class="start-footer">
-        Hover over a tool card and click to open it in the main workspace.
-    </div>
-
-    <script>
-        function openTool(toolName) {
-            const iframe = parent.document.getElementById('tool-frame');
-            if (iframe) {
-                iframe.src = `tools/${toolName}/index.html`;
-
-                const sidenavItems = parent.document.querySelectorAll('.sidebar-item');
-                sidenavItems.forEach(i => i.classList.remove('active'));
-                const activeItem = parent.document.querySelector(`.sidebar-item[data-tool="${toolName}"]`);
-                if (activeItem) activeItem.classList.add('active');
+                    const sidenavItems = parent.document.querySelectorAll('.sidebar-item');
+                    sidenavItems.forEach(i => i.classList.remove('active'));
+                    const activeItem = parent.document.querySelector(`.sidebar-item[data-tool="${toolName}"]`);
+                    if (activeItem) activeItem.classList.add('active');
+                }
             }
-        }
-    </script>
+        </script>
 
 </body>
 

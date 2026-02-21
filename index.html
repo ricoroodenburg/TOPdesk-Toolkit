@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="nl">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOPdesk Toolkit</title>
   <link rel="stylesheet" href="css/stylesheet.css">
-  <script type="module" src="./js/main.js"></script>
   <script src="./js/components/popup.js"></script>
   <script src="./js/components/i18n.js"></script>
-
 </head>
-
 <body>
   <div class="control-pane">
     <!-- HEADER -->
@@ -44,7 +40,6 @@
           <div class="panel__header">
             <h2 data-i18n="terms.menu"></h2>
           </div>
-
           <div class="sidebar-menu">
             <div class="sidebar-item" data-tool="startpage" title="Home">
               <div class="sidebar-icon">
@@ -54,18 +49,15 @@
               </div>
               <div class="sidebar-item-title" data-i18n="terms.home"></div>
             </div>
-
             <div class="sidebar-item" data-tool="asset-audit" title="Asset Audit">
               <div class="sidebar-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M3 3h14v2H3V3zm0 5h14v2H3V8zm0 5h8v2H3v-2zm18.7 5.3l-3.4-3.4a6 6 0 1 0-1.4 1.4l3.4 3.4 1.4-1.4zM10 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" />
                 </svg>
-
               </div>
               <div class="sidebar-item-title" data-i18n="terms.assetAudit"></div>
             </div>
-
             <div class="sidebar-item" data-tool="release-notes" title="Release Notes">
               <div class="sidebar-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24">
@@ -74,26 +66,11 @@
               </div>
               <div class="sidebar-item-title" data-i18n="terms.releaseNotes"></div>
             </div>
-
           </div>
-
-          <!--
-              <div class="sidebar-footer">
-      <button class="button primary" id="btnSignInTopdesk">
-        Sign in with TOPdesk
-      </button>
-    </div>
-  -->
-
         </div>
       </aside>
-
-      <!-- Scrollable container -->
-
       <iframe id="tool-frame" src="" title="Tool content"></iframe>
-
     </div>
-
 </body>
 <script>
 
@@ -167,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const btn = document.querySelector("#btAbout");
     btn.addEventListener("click", () => {
-      showPopup(`${t('terms.about')} ${t('header.title')}`, "<p>Dit is de inhoud van de popup.</p>"), '';
+      showPopup(`${t('terms.about')} ${t('header.title')}`, `${t('terms.aboutMessage')}`), '';
     });
 
   });

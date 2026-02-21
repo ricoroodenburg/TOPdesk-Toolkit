@@ -7,6 +7,7 @@
     "more": "More",
     "search": "Search",
     "about": "About",
+    "aboutMessage": "This product is not developed, supported, or affiliated with TOPdesk. Best effort only.",
     "release": "Version",
     "releaseDate": "Release Date",
     "description": "Description",
@@ -25,7 +26,9 @@
     "statusPage": "Status Page",
     "home": "Home",
     "assetAudit": "Asset Audit",
+    "assetAuditMessage":"Microsoft Intune integration",
     "releaseNotes": "Release Notes",
+    "releaseNotesMessage": "Discover the latest TOPdesk updates",
     "menu": "Menu",
     "welcome": "Welkom",
     "letsGetStarted": "Welcome",
@@ -37,13 +40,16 @@
     "summary": "Summary",
     "result": "Result",
     "required": "Required",
-    "connectToTopdesk":"Connect to TOPdesk",
-    "connectToTopdeskDescription":"Enter your TOPdesk URL, username and application password to connect to your environment.",
-    "tryingConnect":"Trying to connect..",
+    "connectToTopdesk": "Connect to TOPdesk",
+    "connectToTopdeskDescription": "Enter your TOPdesk URL, username and application password to connect to your environment.",
+    "tryingConnect": "Trying to connect..",
     "tryingConnectWith": "Trying to connect to",
-    "version":"Version",
-    "success":"Success",
-    "error":"An error occured"
+    "version": "Version",
+    "success": "Success",
+    "error": "An error occured",
+    "betaNotice": "Beta Notice",
+    "betaNoticeMessage": "This site is in early access and still under development. Features may be incomplete or unstable.",
+    "welcomeMessage": "This is the TOPdesk Toolkit, designed to give you quick access to handy tools like Asset Audit integrated with Microsoft Intune, and to explore the latest TOPdesk releases easily."
   },
   "tooltips": {
     "more": "More",
@@ -60,7 +66,7 @@
     "inVersion": "in version",
     "notDevelopmentBy": "This product is not developed, supported, or affiliated with TOPdesk. Best effort only.",
     "showOn": "Show on",
-    "canNotBeEmpty":"Can not be empty",
+    "canNotBeEmpty": "Can not be empty",
     "credentialsValidTopdesk": "Authentication credentials and permissions are valid"
   },
   "buttons": {
@@ -72,12 +78,12 @@
     "expandAll": "Expand All",
     "collapseAll": "Collapse All"
   },
-  "labels":{
-    "topdeskUrl":"TOPdesk URL",
-    "username":"Username",
-    "applicationPassword":"Application Password"
+  "labels": {
+    "topdeskUrl": "TOPdesk URL",
+    "username": "Username",
+    "applicationPassword": "Application Password"
   },
-  "welcomePage":{
+  "welcomePage": {
     "header": "Welcome!",
     "message": "This wizard helps you connect to your TOPdesk and Microsoft Intune environment to audit assets using data from Microsoft Intune.",
     "feature1": "Complete overview of assets, filtered by templates and status. Expandable with all additional fields",

@@ -1,14 +1,13 @@
 {
   "header": {
-    "title": "TOPdesk Release Notes",
+    "title": "TOPdesk Toolkit",
     "description": "Entdecken Sie die neuesten Updates und Verbesserungen in TOPdesk."
   },
   "terms": {
     "more": "Mehr",
     "search": "Suche",
     "about": "Über",
-    "expandAll": "Alle erweitern",
-    "collapseAll": "Alle reduzieren",
+    "aboutMessage": "Dieses Produkt wurde nicht von TOPdesk entwickelt, unterstützt oder ist mit TOPdesk verbunden. Nur Best-Effort.",
     "release": "Version",
     "releaseDate": "Veröffentlichungsdatum",
     "description": "Beschreibung",
@@ -24,7 +23,33 @@
     "yes": "Ja",
     "no": "Nein",
     "cancel": "Abbrechen",
-    "statusPage": "Statusseite"
+    "statusPage": "Statusseite",
+    "home": "Startseite",
+    "assetAudit": "Asset-Audit",
+    "assetAuditMessage": "Integration mit Microsoft Intune",
+    "releaseNotes": "Release Notes",
+    "releaseNotesMessage": "Entdecken Sie die neuesten TOPdesk-Updates",
+    "menu": "Menü",
+    "welcome": "Willkommen",
+    "letsGetStarted": "Los geht's",
+    "connectionSettings": "Verbindungseinstellungen",
+    "templates": "Vorlagen",
+    "fieldsAndFilters": "Felder und Filter",
+    "connectToMicrosoftIntune": "Mit Microsoft Intune verbinden",
+    "fieldMapping": "Feldzuordnung",
+    "summary": "Zusammenfassung",
+    "result": "Ergebnis",
+    "required": "Erforderlich",
+    "connectToTopdesk": "Mit TOPdesk verbinden",
+    "connectToTopdeskDescription": "Geben Sie Ihre TOPdesk-URL, Ihren Benutzernamen und Ihr Anwendungspasswort ein, um eine Verbindung zu Ihrer Umgebung herzustellen.",
+    "tryingConnect": "Verbindung wird hergestellt",
+    "tryingConnectWith": "Versuche Verbindung mit",
+    "version": "Version",
+    "success": "Erfolg",
+    "error": "Fehler",
+    "betaNotice": "Beta-Hinweis",
+    "betaNoticeMessage": "Diese Seite befindet sich im Early Access und ist noch in Entwicklung. Funktionen können unvollständig oder instabil sein.",
+    "welcomeMessage": "Dies ist das TOPdesk Toolkit, entwickelt, um Ihnen schnellen Zugriff auf nützliche Werkzeuge wie das Asset-Audit mit Integration von Microsoft Intune zu geben und die neuesten TOPdesk-Releases einfach zu erkunden."
   },
   "tooltips": {
     "more": "Mehr",
@@ -39,7 +64,36 @@
     "searchTryAgain": "Versuchen Sie eine andere Suche",
     "releasedOn": "Veröffentlicht am",
     "inVersion": "in Version",
-    "notDevelopmentBy": "Dieses Produkt wurde nicht von TOPdesk entwickelt, wird nicht unterstützt und ist nicht damit verbunden. Nur Best-Effort.",
-    "showOn": "Anzeigen auf"
+    "notDevelopmentBy": "Dieses Produkt wurde nicht von TOPdesk entwickelt, unterstützt oder verlinkt. Nur Best-Effort.",
+    "showOn": "Anzeigen auf",
+    "canNotBeEmpty": "Darf nicht leer sein",
+    "credentialsValidTopdesk": "Anmeldedaten und Berechtigungen sind gültig"
+  },
+  "buttons": {
+    "nextStep": "Weiter",
+    "previousStep": "Zurück",
+    "startAudit": "Audit starten",
+    "connect": "Verbinden",
+    "loginMicrosoft": "Mit Microsoft anmelden",
+    "expandAll": "Alle erweitern",
+    "collapseAll": "Alle reduzieren"
+  },
+  "labels": {
+    "topdeskUrl": "TOPdesk-URL",
+    "username": "Benutzername",
+    "applicationPassword": "Anwendungspasswort"
+  },
+  "welcomePage": {
+    "header": "Willkommen!",
+    "message": "Dieser Assistent hilft Ihnen, eine Verbindung zu Ihrer TOPdesk- und Microsoft Intune-Umgebung herzustellen, um Assets mit Daten aus Microsoft Intune zu prüfen.",
+    "feature1": "Vollständige Übersicht über Assets, gefiltert nach Vorlagen und Status. Erweiterbar mit allen zusätzlichen Feldern",
+    "feature2": "Interaktive Filter- und Suchfunktionen",
+    "feature3": "Integration mit Microsoft Intune",
+    "feature4": "Vergleichen Sie Zuweisungen mit dem zuletzt angemeldeten Intune-Benutzer",
+    "feature5": "Öffnen Sie Assets direkt in TOPdesk oder Intune",
+    "feature6": "Aktualisieren Sie eine oder mehrere Zuweisungen automatisch mit einem Klick",
+    "feature7": "Vollständig im Browser gehostet, Ihre Daten bleiben lokal und sicher",
+    "feature8": "Dunkler Modus",
+    "feature9": "Option, Assets vom Audit auszuschließen"
   }
 }
