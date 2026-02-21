@@ -161,7 +161,7 @@ export async function getIntuneDevices({ graphToken, serialNumbers, extraFilter 
                     const requests = batch.map((id, idx) => ({
                         id: `${idx}`,
                         method: 'GET',
-                        url: `/deviceManagement/managedDevices/${encodeURIComponent(id)}?$select=id,ownerType,serialNumber,deviceName,operatingSystem,usersLoggedOn,lastSyncDateTime,enrolledDateTime,complianceState,userPrincipalName`,
+                        url: `/deviceManagement/managedDevices/${encodeURIComponent(id)}?$select=id,ownerType,serialNumber,deviceName,operatingSystem,usersLoggedOn,lastSyncDateTime,enrolledDateTime,complianceState,userPrincipalName,osVersion`,
                     }));
 
                     const response = await fetch('https://graph.microsoft.com/beta/$batch', {
@@ -206,7 +206,7 @@ export async function getIntuneDevices({ graphToken, serialNumbers, extraFilter 
                     filterQuery = `(${filterSerials}) and (${extraFilter})`;
                 }
 
-                let nextLink = `${baseUrl}?$filter=${encodeURIComponent(filterQuery)}&$select=id,ownerType,serialNumber,deviceName,operatingSystem,usersLoggedOn,lastSyncDateTime,enrolledDateTime,complianceState,userPrincipalName`;
+                let nextLink = `${baseUrl}?$filter=${encodeURIComponent(filterQuery)}&$select=id,ownerType,serialNumber,deviceName,operatingSystem,usersLoggedOn,lastSyncDateTime,enrolledDateTime,complianceState,userPrincipalName,osVersion`;
 
                 while (nextLink) {
                     const response = await fetch(nextLink, {
@@ -222,6 +222,7 @@ export async function getIntuneDevices({ graphToken, serialNumbers, extraFilter 
                         const data = await response.json();
                         if (data.value?.length) {
                             results.push(...data.value);
+                            //console.log(data.value);
                             console.info(`[${moduleName}][${functionName}] [Batch ${index + 1}] Received ${data.value.length} devices`);
                         }
                         nextLink = data['@odata.nextLink'] || null;

@@ -754,6 +754,7 @@ Indicates activity after the asset was assigned to stock.`,
                 { field: 'intuneDevice.id', headerText: 'Intune Device ID', visible: false },
                 { field: 'intuneDevice.userPrincipalName', headerText: 'Intune Primary User', width: 200 },
                 { field: 'intuneDevice.operatingSystem', headerText: 'Operating System', width: 150 },
+                { field: 'intuneDevice.osVersion', headerText: 'OS Version', width: 150 },
                 {
                     field: 'intuneDevice.complianceState', headerText: 'Compliance State', width: 150, template: function (props) {
                         const value = props.intuneDevice?.complianceState;

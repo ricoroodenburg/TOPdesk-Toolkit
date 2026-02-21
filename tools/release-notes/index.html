@@ -20,13 +20,14 @@
         <div class="global-toolbar">
 
             <div class="toolbar-left hide-when-calendar">
-                <input type="text" id="globalSearch" placeholder="Search" class="textbox toolbar" />
+                <input type="text" id="globalSearch" data-i18n-placeholder="terms.search" class="textbox toolbar" />
             </div>
 
             <div class="toolbar-right">
                 <div class="button-group hide-when-calendar">
-                    <button id="expandall" class="button primary grouped" data-i18n="buttons.expandAll"></button>
-                    <button id="collapseall" class="button primary grouped" data-i18n="buttons.collapseAll"></button>
+                    <!-- <button id="expandall" class="button primary grouped" data-i18n="buttons.expandAll"></button>
+                    <button id="collapseall" class="button primary grouped" data-i18n="buttons.collapseAll"></button> -->
+                    <div id="archiveToggleContainer" class="toggle-button-group"></div>
                 </div>
 
                 <div class="button-group">
@@ -54,41 +55,66 @@
 </div>
 <script>
 
-document.addEventListener("DOMContentLoaded", function () {
+    const archiveContainer = document.querySelector("#archiveToggleContainer");
 
-    const btnGrid = document.getElementById("btn1");
-    const btnCal = document.getElementById("btn2");
+    const archiveOptions = [
+        { id: 'expandall', i18n: 'buttons.expandAll' },
+        { id: 'collapseall', i18n: 'buttons.collapseAll' }
+    ];
 
-    const divGrid = document.getElementById("grid");
-    const divCal = document.getElementById("calendar");
+    archiveOptions.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.id = opt.id;
+        btn.className = 'toggle-button';
+        btn.setAttribute('data-i18n', opt.i18n);
+        btn.textContent = getNestedTranslation(window.translations, opt.i18n) || opt.i18n;
 
-    divGrid.classList.add("view-active");
-    btnGrid.classList.add("selected");
+        // Mark as selected
+        btn.addEventListener('click', () => {
+            archiveContainer.querySelectorAll('button').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+        });
 
-    btnGrid.addEventListener("click", function () {
-        // View toggling
+        archiveContainer.appendChild(btn);
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const btnGrid = document.getElementById("btn1");
+        const btnCal = document.getElementById("btn2");
+        const btnExpand = document.getElementById("expandall");
+        
+        const divGrid = document.getElementById("grid");
+        const divCal = document.getElementById("calendar");
+
         divGrid.classList.add("view-active");
-        divCal.classList.remove("view-active");
-
         btnGrid.classList.add("selected");
-        btnCal.classList.remove("selected");
+        btnExpand.classList.add("selected");
 
-        // Toolbar visibility
-        document.body.classList.remove("calendar-view-active");
+        btnGrid.addEventListener("click", function () {
+            // View toggling
+            divGrid.classList.add("view-active");
+            divCal.classList.remove("view-active");
+
+            btnGrid.classList.add("selected");
+            btnCal.classList.remove("selected");
+
+            // Toolbar visibility
+            document.body.classList.remove("calendar-view-active");
+        });
+
+        btnCal.addEventListener("click", function () {
+            // View toggling
+            divCal.classList.add("view-active");
+            divGrid.classList.remove("view-active");
+
+            btnCal.classList.add("selected");
+            btnGrid.classList.remove("selected");
+
+            // Toolbar visibility
+            document.body.classList.add("calendar-view-active");
+        });
+
     });
-
-    btnCal.addEventListener("click", function () {
-        // View toggling
-        divCal.classList.add("view-active");
-        divGrid.classList.remove("view-active");
-
-        btnCal.classList.add("selected");
-        btnGrid.classList.remove("selected");
-
-        // Toolbar visibility
-        document.body.classList.add("calendar-view-active");
-    });
-
-});
 
 </script>

@@ -11,9 +11,17 @@ window.t = function(key) {
 
 function setLanguage(lang) {
   window.currentLang = lang;
+
+  // Textcontent
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     el.textContent = getNestedTranslation(window.translations, key) || key;
+  });
+
+  // Placeholder
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    el.placeholder = getNestedTranslation(window.translations, key) || key;
   });
 }
 
