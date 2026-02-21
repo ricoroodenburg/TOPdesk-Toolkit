@@ -168,7 +168,7 @@ function highlightStep(index) {
             li.classList.add('inactive'); // nog niet bereikt of invalid
         }
     });
-    updateStepLines();
+    updateStepLines();ß
 }
 function updateStepLines() {
     const lis = document.querySelectorAll("#stepList li");
@@ -194,7 +194,7 @@ window.i18nReady.then(() => {
     step3.title = t('terms.templates');
     step4.title = t('terms.fieldsAndFilters');
     step5.title = t('terms.connectToMicrosoftIntune');
-    step6.title = t('terms.templatesfieldMapping');
+    step6.title = t('terms.fieldMapping');
     step7.title = t('terms.summary');
     step8.title = t('terms.result');
 
