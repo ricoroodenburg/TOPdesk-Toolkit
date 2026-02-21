@@ -168,7 +168,7 @@ function highlightStep(index) {
             li.classList.add('inactive'); // nog niet bereikt of invalid
         }
     });
-    updateStepLines();ß
+    updateStepLines();
 }
 function updateStepLines() {
     const lis = document.querySelectorAll("#stepList li");
