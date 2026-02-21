@@ -60,7 +60,8 @@
 .button-group .grouped {
     border: none;
     border-right: none !important;
-    background: white;
+    /*background: white;*/
+    background-color: var(--ds-color-bg-default);
     padding: 8px 12px;
 }
 

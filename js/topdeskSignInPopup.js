@@ -1,6 +1,3 @@
-// topdeskPopup.js
-// JE CSS BLIJF IK AF! Alleen de JS zoals gevraagd.
-
 import { testConnection } from './functions/topdeskClient.js';
 import { state } from './components/state.js';
 import { saveSettings } from './components/storage.js';
@@ -14,7 +11,6 @@ const auth = state.topdesk.authentication;
 // HTML TEMPLATE (met al jouw inline styles!)
 // -----------------------------
 export const topdeskPopupHTML = (auth = {}) => `
-
     <div class="mb-3">
       <label class="label">TOPdesk URL (required)</label>
       <div class="validation-feedback__message" id="error-url"></div>
@@ -33,8 +29,6 @@ export const topdeskPopupHTML = (auth = {}) => `
     <button class="button secondary" id="td-login-btn">Connect</button>
     <br>
     <div id="td-login-status" class="mt-3"></div>
-
-
 `;
 
 // -----------------------------
