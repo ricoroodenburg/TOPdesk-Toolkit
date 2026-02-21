@@ -64,7 +64,7 @@ export const step2 = {
 
             if (!urlInput.value.trim()) {
                 urlInput.classList.add("error");
-                errorUrl.textContent = `${t('labels.url')} ${t('messages.canNotBeEmpty').toLowerCase()}`;
+                errorUrl.textContent = `${t('labels.topdeskUrl')} ${t('messages.canNotBeEmpty').toLowerCase()}`;
                 valid = false;
             }
             if (!userInput.value.trim()) {
