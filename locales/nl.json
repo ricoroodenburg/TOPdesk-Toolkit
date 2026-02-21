@@ -27,9 +27,25 @@
     "statusPage": "Statuspagina",
     "home": "Start",
     "assetAudit": "Asset Audit",
-    "releaseNotes" : "Release Notes",
+    "releaseNotes": "Release Notes",
     "menu": "Menu",
-    "welcome": "Welkom"
+    "welcome": "Welkom",
+    "letsGetStarted": "Laten we beginnen",
+    "connectionSettings": "Verbindingsinstellingen",
+    "templates": "Sjablonen",
+    "fieldsAndFilters": "Velden en filters",
+    "connectToMicrosoftIntune": "Verbinden met Microsoft Intune",
+    "fieldMapping": "Veldtoewijzing",
+    "summary": "Samenvatting",
+    "result": "Resultaat",
+    "required": "Verplicht",
+    "connectToTopdesk": "Verbinden met TOPdesk",
+    "connectToTopdeskDescription": "Voer je TOPdesk-URL, gebruikersnaam en applicatiewachtwoord in om verbinding te maken met je omgeving.",
+    "tryingConnect": "Verbinding maken",
+    "tryingConnectWith": "Proberen om verbinding te maken met",
+    "version": "Versie",
+    "success": "Succes",
+    "error":"Error"
   },
   "tooltips": {
     "more": "Meer",
@@ -45,6 +61,20 @@
     "releasedOn": "Uitgebracht op",
     "inVersion": "in versie",
     "notDevelopmentBy": "Dit product is niet ontwikkeld, ondersteund of gelinkt aan TOPdesk. Alleen best-effort.",
-    "showOn": "Toon op"
+    "showOn": "Toon op",
+    "canNotBeEmpty": "Mag niet leeg zijn",
+    "credentialsValidTopdesk": "De inloggegevens en rechten zijn geldig"
+  },
+  "buttons": {
+    "nextStep": "Volgende",
+    "previousStep": "Vorige",
+    "startAudit": "Audit starten",
+    "connect": "Verbinden",
+    "loginMicrosoft": "Aanmelden met Microsoft"
+  },
+  "labels": {
+    "topdeskUrl": "TOPdesk-URL",
+    "username": "Gebruikersnaam",
+    "applicationPassword": "Applicatiewachtwoord"
   }
 }

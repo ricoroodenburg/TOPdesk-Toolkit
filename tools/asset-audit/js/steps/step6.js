@@ -3,7 +3,7 @@ import { state } from '../components/state.js';
 import { saveSettings, loadSettings } from '../components/storage.js';
 
 export const step6 = {
-    title: "Field Mapping",
+  title: t('terms.fieldMapping'),
     render: async (container, data, wizardState, updateButtons) => {
 
         // -----------------------------------------

@@ -3,7 +3,7 @@
     "title": "TOPdesk Release Notes",
     "description": "Discover the latest updates and improvements in TOPdesk."
   },
-  "terms":{
+  "terms": {
     "more": "More",
     "search": "Search",
     "about": "About",
@@ -27,16 +27,32 @@
     "statusPage": "Status Page",
     "home": "Home",
     "assetAudit": "Asset Audit",
-    "releaseNotes" : "Release Notes",
+    "releaseNotes": "Release Notes",
     "menu": "Menu",
-    "welcome": "Welkom"
+    "welcome": "Welkom",
+    "letsGetStarted": "Let's get started",
+    "connectionSettings": "Connection settings",
+    "templates": "Templates",
+    "fieldsAndFilters": "Fields and filters",
+    "connectToMicrosoftIntune": "Connect to Microsoft Intune",
+    "fieldMapping": "Field mapping",
+    "summary": "Summary",
+    "result": "Result",
+    "required": "Required",
+    "connectToTopdesk":"Connect to TOPdesk",
+    "connectToTopdeskDescription":"Enter your TOPdesk URL, username and application password to connect to your environment.",
+    "tryingConnect":"Trying to connect..",
+    "tryingConnectWith": "Trying to connect to",
+    "version":"Version",
+    "success":"Success",
+    "error":"An error occured"
   },
   "tooltips": {
     "more": "More",
     "search": "Search",
     "about": "About",
     "expandAll": "Expand All",
-    "collapseAll": "Collapse All" 
+    "collapseAll": "Collapse All"
   },
   "messages": {
     "noSearchResult": "No results found",
@@ -44,7 +60,21 @@
     "searchTryAgain": "Try a different search",
     "releasedOn": "Released on",
     "inVersion": "in version",
-    "notDevelopmentBy":"This product is not developed, supported, or affiliated with TOPdesk. Best effort only.",
-    "showOn": "Show on"
+    "notDevelopmentBy": "This product is not developed, supported, or affiliated with TOPdesk. Best effort only.",
+    "showOn": "Show on",
+    "canNotBeEmpty":"Can not be empty",
+    "credentialsValidTopdesk": "Authentication credentials and permissions are valid"
+  },
+  "buttons": {
+    "nextStep": "Next Step",
+    "previousStep": "Previous Step",
+    "startAudit": "Start Audit",
+    "connect": "Connect",
+    "loginMicrosoft": "Login with Microsoft"
+  },
+  "labels":{
+    "topdeskUrl":"TOPdesk URL",
+    "username":"Username",
+    "applicationPassword":"Application Password"
   }
 }

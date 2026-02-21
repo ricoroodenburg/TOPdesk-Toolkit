@@ -1,5 +1,5 @@
 export const step1 = {
-  title: "Let's get started",
+  title: t('terms.letsGetStarted'),
   render: (container, data, wizardState) => {
     container.innerHTML = `
         <div style="min-width: 85vh; max-width: 100vh; margin: 0 auto; text-align: center;">
