@@ -4,7 +4,7 @@ import { getIntuneDevices, fetchUserBatch } from '../functions/microsoftGraph.js
 import { state } from '../components/state.js';
 
 export const step8 = {
-  title: t('terms.result'),
+  //title: t('terms.result'),
     render: async (container, data, wizardState) => {
         const steps = [
             "Collect Assets",

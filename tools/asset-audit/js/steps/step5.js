@@ -5,7 +5,7 @@ import { saveSettings } from "../components/storage.js";
 import { loginGraph } from "../components/graphClient.js";
 
 export const step5 = {
-  title: t('terms.connectToMicrosoftIntune'),
+  //title: t('terms.connectToMicrosoftIntune'),
 
   render: async (container, data, wizardState, updateButtons) => {
 

@@ -4,7 +4,7 @@ import { state } from '../components/state.js';
 import { saveSettings, loadSettings } from '../components/storage.js';
 
 export const step4 = {
-  title: t('terms.fieldsAndFilters'),
+  //title: t('terms.fieldsAndFilters'),
 
   render: async (container, data, wizardState, updateButtons) => {
     // --- Load saved settings ---

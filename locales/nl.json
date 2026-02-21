@@ -7,8 +7,6 @@
     "more": "Meer",
     "search": "Zoeken",
     "about": "Over",
-    "expandAll": "Alles uitklappen",
-    "collapseAll": "Alles inklappen",
     "release": "Versie",
     "releaseDate": "Datum van uitgave",
     "description": "Beschrijving",
@@ -30,7 +28,7 @@
     "releaseNotes": "Release Notes",
     "menu": "Menu",
     "welcome": "Welkom",
-    "letsGetStarted": "Laten we beginnen",
+    "letsGetStarted": "Welkom",
     "connectionSettings": "Verbindingsinstellingen",
     "templates": "Sjablonen",
     "fieldsAndFilters": "Velden en filters",
@@ -70,11 +68,26 @@
     "previousStep": "Vorige",
     "startAudit": "Audit starten",
     "connect": "Verbinden",
-    "loginMicrosoft": "Aanmelden met Microsoft"
+    "loginMicrosoft": "Aanmelden met Microsoft",
+    "expandAll": "Alles uitklappen",
+    "collapseAll": "Alles inklappen"
   },
   "labels": {
     "topdeskUrl": "TOPdesk-URL",
     "username": "Gebruikersnaam",
     "applicationPassword": "Applicatiewachtwoord"
+  },
+  "welcomePage":{
+    "header": "Welkom!",
+    "message": "Deze wizard helpt je verbinding te maken met je TOPdesk- en Microsoft Intune-omgeving om middelen te controleren met gegevens uit Microsoft Intune.",
+    "feature1": "Volledig overzicht van middelen, gefilterd op sjablonen en status. Uit te breiden met alle extra velden",
+    "feature2": "Interactieve filters en zoekmogelijkheden",
+    "feature3": "Integratie met Microsoft Intune",
+    "feature4": "Vergelijk toewijzingen met laatst ingelogde Intune-gebruiker",
+    "feature5": "Open middelen direct in TOPdesk of Intune",
+    "feature6": "Werk één of meerdere toewijzingen automatisch bij met één klik",
+    "feature7": "Volledig in je browser gehost, je data blijft altijd lokaal en veilig",
+    "feature8": "Donkere modus",
+    "feature9": "Mogelijkheid om middelen uit te sluiten van de audit"
   }
 }

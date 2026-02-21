@@ -1,7 +1,7 @@
 import { state } from '../components/state.js';
 
 export const step7 = {
-  title: t('terms.summary'),
+  //title: t('terms.summary'),
 
     render: async (container, data, wizardState, updateButtons) => {
 

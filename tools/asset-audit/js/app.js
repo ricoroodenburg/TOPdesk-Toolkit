@@ -96,7 +96,7 @@ function updateButtons() {
 
     document.querySelectorAll('#stepList li').forEach((li, index) => {
         let clickable = false;
-        
+
         if (index === currentStep) {
             clickable = true; // huidige stap altijd pointer
         } else if (wizardState.stepsValid[index]) {
@@ -107,7 +107,7 @@ function updateButtons() {
         /*
         li.style.cursor = clickable ? 'pointer' : 'default';
         */
-         // aria-disabled voor CSS
+        // aria-disabled voor CSS
         li.setAttribute('aria-disabled', clickable ? 'false' : 'true');
 
         // alternatief: ook op bolletje zelf
@@ -154,7 +154,7 @@ function renderStepList() {
 
 
 function highlightStep(index) {
-    
+
     document.querySelectorAll('#stepList li').forEach((li, i) => {
         li.classList.remove('active', 'completed', 'inactive');
 
@@ -187,3 +187,24 @@ function updateStepLines() {
         }
     });
 }
+window.i18nReady.then(() => {
+    // update step titles
+    step1.title = t('terms.letsGetStarted');
+    step2.title = t('terms.connectionSettings'); 
+    step3.title = t('terms.templates');
+    step4.title = t('terms.fieldsAndFilters');
+    step5.title = t('terms.connectToMicrosoftIntune');
+    step6.title = t('terms.templatesfieldMapping');
+    step7.title = t('terms.summary');
+    step8.title = t('terms.result');
+
+    // Update de labels van de bestaande lijstitems zonder opnieuw DOM te maken
+    document.querySelectorAll('#stepList li').forEach((li, index) => {
+        const step = wizardState.steps[index];
+        const label = li.querySelector('.step-label');
+        if (label && step) label.textContent = step.title || `Step ${index + 1}`;
+    });
+
+    // Highlight de huidige stap opnieuw zodat active class correct is
+    highlightStep(wizardState.currentStep);
+});

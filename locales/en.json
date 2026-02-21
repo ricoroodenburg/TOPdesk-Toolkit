@@ -7,8 +7,6 @@
     "more": "More",
     "search": "Search",
     "about": "About",
-    "expandAll": "Expand All",
-    "collapseAll": "Collapse All",
     "release": "Version",
     "releaseDate": "Release Date",
     "description": "Description",
@@ -30,7 +28,7 @@
     "releaseNotes": "Release Notes",
     "menu": "Menu",
     "welcome": "Welkom",
-    "letsGetStarted": "Let's get started",
+    "letsGetStarted": "Welcome",
     "connectionSettings": "Connection settings",
     "templates": "Templates",
     "fieldsAndFilters": "Fields and filters",
@@ -70,11 +68,26 @@
     "previousStep": "Previous Step",
     "startAudit": "Start Audit",
     "connect": "Connect",
-    "loginMicrosoft": "Login with Microsoft"
+    "loginMicrosoft": "Login with Microsoft",
+    "expandAll": "Expand All",
+    "collapseAll": "Collapse All"
   },
   "labels":{
     "topdeskUrl":"TOPdesk URL",
     "username":"Username",
     "applicationPassword":"Application Password"
+  },
+  "welcomePage":{
+    "header": "Welcome!",
+    "message": "This wizard helps you connect to your TOPdesk and Microsoft Intune environment to audit assets using data from Microsoft Intune.",
+    "feature1": "Complete overview of assets, filtered by templates and status. Expandable with all additional fields",
+    "feature2": "Interactive filtering and search capabilities",
+    "feature3": "Integration with Microsoft Intune",
+    "feature4": "Compare assignments with last logged-in Intune user",
+    "feature5": "Open resources directly in TOPdesk or Intune",
+    "feature6": "Automatically update one or multiple assignments with just a single click",
+    "feature7": "Fully hosted in your browser, your data always stays local and secure",
+    "feature8": "Dark Mode",
+    "feature9": "Option to exclude assets from the audit"
   }
 }

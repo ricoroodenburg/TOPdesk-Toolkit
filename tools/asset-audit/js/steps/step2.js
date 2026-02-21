@@ -3,7 +3,7 @@ import { state } from '../components/state.js';
 import { saveSettings } from '../components/storage.js';
 
 export const step2 = {
-    title: t('terms.connectionSettings'),
+    //title: t('terms.connectionSettings'),
     render: (container, data, wizardState, updateButtons) => {
 
         // --- Defaults in state ---
