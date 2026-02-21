@@ -80,7 +80,9 @@ function updateButtons() {
     nextBtn.disabled = !wizardState.stepsValid[wizardState.currentStep];
 
     prevBtn.style.visibility = wizardState.currentStep === 0 ? "hidden" : "visible";
-    nextBtn.textContent = wizardState.currentStep === 6 ? "Start Audit" : "Next Step";
+    nextBtn.textContent = wizardState.currentStep === 6 ? t('buttons.startAudit') : t('buttons.nextStep');;
+
+
     nextBtn.style.display = wizardState.currentStep === 7 ? "none" : "";
     document.getElementById('stepList').style.display = wizardState.currentStep === 7 ? "none" : "";
 

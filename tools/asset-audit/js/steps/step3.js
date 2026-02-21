@@ -3,7 +3,7 @@ import { state } from '../components/state.js';
 import { saveSettings } from '../components/storage.js';
 
 export const step3 = {
-  title: "Templates",
+  title: t('terms.templates'),
   render: async (container, data, wizardState, updateButtons) => {
     container.innerHTML = `
     <div style="min-width: 85vh; max-width: 100vh; margin: 0 auto">

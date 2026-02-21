@@ -3,7 +3,7 @@ import { state } from '../components/state.js';
 import { saveSettings } from '../components/storage.js';
 
 export const step2 = {
-    title: "Connection Settings",
+    title: t('terms.connectionSettings'),
     render: (container, data, wizardState, updateButtons) => {
 
         // --- Defaults in state ---
@@ -15,31 +15,33 @@ export const step2 = {
         container.innerHTML = `
         <div style="min-width: 85vh; max-width: 100vh; margin: 0 auto">
             <div style="text-align: center;">
-                <h1>Connect to TOPdesk</h1>
-                <p>Enter your TOPdesk URL, username and application password to connect to your environment.</p>
+                <h1 data-i18n="terms.connectToTopdesk"></h1>
+                <p data-i18n="terms.connectToTopdeskDescription">Enter your TOPdesk URL, username and application password to connect to your environment.</p>
             </div>
             <div style="margin: 0 auto">
                 <div class="mb-3">
-                    <label class="label">TOPdesk URL (required)</label>
+                    <label class="label">${t('labels.topdeskUrl')} (${t('terms.required')})</label>
                     <div class="validation-feedback__message" id="error-url"></div>
                     <input id="td-url" class="textbox" value="${auth.url || ''}" placeholder="https://customer.topdesk.net" required>
                 </div>
                 <div class="mb-3">
-                    <label class="label">Username (required)</label>
+                    <label class="label">${t('labels.username')} (${t('terms.required')})</label>
                     <div class="validation-feedback__message" id="error-username"></div>
-                    <input id="td-username" class="textbox" value="${auth.username || ''}" placeholder="Username" required>
+                    <input id="td-username" class="textbox" value="${auth.username || ''}" placeholder="${t('labels.username')} " required>
                 </div>
                 <div class="mb-3">
-                    <label class="label">Application Password (required)</label>
+                    <label class="label">${t('labels.applicationPassword')} (${t('terms.required')})</label>
                     <div class="validation-feedback__message" id="error-password"></div>
-                    <input id="td-password" class="textbox" placeholder="Application Password" required type="password">
+                    <input id="td-password" class="textbox" placeholder="${t('labels.applicationPassword')} " required type="password">
                 </div>
-                <button class="button secondary" id="td-login-btn">Connect</button>
+                <button class="button secondary" id="td-login-btn">${t('buttons.connect')} </button>
                 <br>
                 <div id="td-login-status" class="mt-3"></div>
             </div>
         </div>
         `;
+        
+        setLanguage(window.currentLang);
 
         const urlInput = container.querySelector('#td-url');
         const userInput = container.querySelector('#td-username');
@@ -62,17 +64,17 @@ export const step2 = {
 
             if (!urlInput.value.trim()) {
                 urlInput.classList.add("error");
-                errorUrl.textContent = "URL can not be empty";
+                errorUrl.textContent = `${t('labels.url')} ${t('messages.canNotBeEmpty').toLowerCase()}`;
                 valid = false;
             }
             if (!userInput.value.trim()) {
                 userInput.classList.add("error");
-                errorUsername.textContent = "Username can not be empty";
+                errorUsername.textContent = `${t('labels.username')} ${t('messages.canNotBeEmpty').toLowerCase()}`;
                 valid = false;
             }
             if (!passInput.value.trim()) {
                 passInput.classList.add("error");
-                errorPassword.textContent = "Application Password can not be empty";
+                errorPassword.textContent = `${t('labels.applicationPassword')} ${t('messages.canNotBeEmpty').toLowerCase()}`;
                 valid = false;
             }
 
@@ -86,7 +88,7 @@ export const step2 = {
                 if (idx === 0) errorUrl.textContent = "";
                 if (idx === 1) errorUsername.textContent = "";
                 if (idx === 2) errorPassword.textContent = "";
-                loginBtn.textContent = "Connect";
+                loginBtn.textContent = t('buttons.connect');
                 loginBtn.disabled = false;
                 statusDiv.innerHTML = "";
             });
@@ -110,13 +112,13 @@ export const step2 = {
             statusDiv.innerHTML = `
                 <div style="margin-top: 1rem">
                     <div class="notification-info">
-                        <strong class="notification-title">Verbinding testen</strong>
-                        <p class="notification-description">Proberen om verbinding te maken met TOPdesk...</p>
+                        <strong class="notification-title">${t('terms.tryingConnect')}</strong>
+                        <p class="notification-description">${t('terms.tryingConnectWith')} TOPdesk...</p>
                     </div>
                 </div>
             `;
 
-            loginBtn.textContent = "Trying to connect..";
+            loginBtn.textContent = `${t('terms.tryingConnect')}...`
             loginBtn.disabled = true;
 
             try {
@@ -130,12 +132,12 @@ export const step2 = {
                 statusDiv.innerHTML = `
                     <div style="margin-top: 1rem">
                         <div class="notification-success">
-                            <strong>Success</strong>
-                            <p>Authentication credentials and permissions are valid. TOPdesk version: ${version}</p>
+                            <strong>${t('terms.success')}</strong>
+                            <p>${t('messages.credentialsValidTopdesk')}. TOPdesk ${t('terms.version').toLowerCase()}: ${version}</p>
                         </div>
                     </div>
                 `;
-                loginBtn.textContent = "Connect";
+                loginBtn.textContent = t('buttons.connect');
                 loginBtn.disabled = false;
                 wizardState.stepsValid[1] = true;
                 updateButtons();
@@ -145,13 +147,13 @@ export const step2 = {
                 statusDiv.innerHTML = `
                     <div style="margin-top: 1rem">
                         <div class="notification-error">
-                            <strong>An error occured</strong>
+                            <strong>${t('terms.error')}</strong>
                             <p>${err}</p>
                         </div>
                     </div>
                 `;
 
-                loginBtn.textContent = "Connect";
+                loginBtn.textContent = t('buttons.connect');
                 loginBtn.disabled = false;
                 wizardState.stepsValid[1] = false;
                 updateButtons();
