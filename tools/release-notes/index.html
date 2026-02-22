@@ -63,7 +63,7 @@
     archiveOptions.forEach(opt => {
         const btn = document.createElement('button');
         btn.id = opt.id;
-        btn.className = 'toggle-button';
+        btn.className = 'toggle-button grid';
         btn.setAttribute('data-i18n', opt.i18n);
         btn.textContent = getNestedTranslation(window.translations, opt.i18n) || opt.i18n;
 
