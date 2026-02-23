@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta http-equiv="Content-Security-Policy" content="
+<meta http-equiv="Content-Security-Policy" content="
 default-src 'self';
-script-src 'self';
+script-src 'self' 'unsafe-inline' https://graph.microsoft.com;
+style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.syncfusion.com;
 connect-src 'self' https://graph.microsoft.com https:;
-img-src 'self' data:;
-style-src 'self';
-font-src 'self';
-object-src 'none';
-base-uri 'self';
-frame-ancestors 'none';
-form-action 'none';
-upgrade-insecure-requests;
-">
+img-src 'self' data:;">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOPdesk Toolkit</title>
