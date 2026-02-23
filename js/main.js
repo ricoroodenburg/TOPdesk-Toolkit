@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const sidebar = document.getElementById('sidebar');
   const toggleButton = document.getElementById('toggleButton');
-  const icon = toggleButton.querySelector('.e-icons');
+const icon = toggleButton.querySelector('e-icons');  
+//const icon = toggleButton.querySelector('.e-icons');
 
   let isCollapsed = false;
 
