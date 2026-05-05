@@ -417,7 +417,6 @@ export async function getAssetRelationHistory({ topdeskUrl, topdeskUsername, pas
 }
 
 // Supporting Files - Persons
-
 export async function getPersonsByIds({ topdeskUrl, topdeskUsername, password, personIds = [], batchSize = 100, fields = [] }) {
     const functionName = 'getPersonsByIds';
     const personMap = {};
