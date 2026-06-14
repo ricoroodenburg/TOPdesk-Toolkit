@@ -45,6 +45,7 @@ async function initGrid() {
             groupSettings: { columns: ['releaseDate'], showDropArea: false, captionTemplate: '#captiontemplate' },
             allowResizing: true,
             allowReordering: true,
+            rowDataBound: rowDataBound,
             emptyRecordTemplate: `
                 <div class='no-results' style="text-align: center;">
                     <img src="emptyRecordTemplate.svg" class="e-emptyRecord" alt="No record" style="height: 88.2%; max-height: 360px">
@@ -84,7 +85,7 @@ async function initGrid() {
                 { field: "isTosNote", headerText: "TOS", width: 80, template: d => d.isTosNote ? `<span class="status-badge success">${t('terms.true')}</span>` : `<span class="status-badge danger">${t('terms.false')}</span>`, visible: false }
             ],
             rowDataBound: function (args) {
-                if (args.data.attentions?.highlight) args.row.classList.add('highlight-row');
+                if (args.data.attentions?.highlight)args.row.classList.add('row-highlight')
             }
         });
 
@@ -105,6 +106,13 @@ async function initGrid() {
 
     } catch (e) {
         console.error("Failed to initialize grid:", e);
+    }
+}
+
+function rowDataBound(args) {
+    console.log(args)
+    if (args.attentions.highlight) {
+        args.row.classList.add('below-30');
     }
 }
 

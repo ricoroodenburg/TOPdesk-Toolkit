@@ -231,7 +231,7 @@ body.calendar-view-active .hide-when-calendar {
   gap: var(--ds-spacer-2x);
   align-items: stretch;
   min-height: 70px;
-  padding-top: 20px;
+  /*padding-top: 20px;*/
   padding-bottom: 20px;
 }
 
@@ -264,6 +264,11 @@ body.calendar-view-active .hide-when-calendar {
 }
 
 .todo-item.highlight {
+  background-color: var(--ds-color-fg-attention-subtle);
+  border-left-color: var(--ds-color-bg-attention-mid);
+}
+
+.row-highlight {
   background-color: var(--ds-color-fg-attention-subtle);
   border-left-color: var(--ds-color-bg-attention-mid);
 }
