@@ -10,6 +10,17 @@ async function initCalendar() {
         IsAllDay: true,
         Description: item.descriptionHtml,
         ProjectId: item.attentions?.highlight ? 1 : 0,
+        // Release Note Custom Fields
+        Title: item.title ?? "",
+        Description: item.description ?? "",
+        DescriptionHtml: item.descriptionHtml ?? "",
+        Release: item.release ?? "",
+        ReleaseDate: new Date(item.releaseDate ?? 0),
+        Category: item.category ?? "",
+        Subcategory: item.subcategory ?? "",
+        Source: item.source ?? "",
+            
+
     }));
 
     const schedule = new ej.schedule.Schedule({
@@ -39,7 +50,15 @@ async function initCalendar() {
                 args.element.classList.add("calendar-event-highlight");
             }
         },
-        popupOpen: function (args) {
+        popupOpen: (args) => {
+            console.log(args)
+            if (args.type === 'QuickInfo') {
+                args.cancel = true;
+                showPopup(`${args?.data.Category ?? ""} (${args?.data.Release ?? ""})`, args?.data.DescriptionHtml ?? "");
+                //showPopup(args?.data?.Subject ?? "", args?.data?.Description ?? "");
+            }
+        }
+        /*popupOpen: function (args) {
             if (args.type === "QuickInfo" && args.data && args.data.Description) {
 
                 args.element.querySelector('.e-subject').innerHTML = args.data.Subject;
@@ -53,7 +72,7 @@ async function initCalendar() {
             if (args.type === "Editor") {
                 args.cancel = true;
             }
-        }
+        }*/
     });
 
     schedule.appendTo("#calendar");
