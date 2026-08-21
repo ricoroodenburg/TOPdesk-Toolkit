@@ -14,45 +14,51 @@
     <script src="../../js/components/popup.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<div class="content-desktop" style="padding: 25px">
-    <script id="captiontemplate" type="text/x-template">
+
+<body class="iframe-page">
+    <div class="content-desktop">
+        <div class="content-frame">
+            <script id="captiontemplate" type="text/x-template">
 					${template(data)}
 				</script>
-    <div class="grid-wrapper">
-        <div class="global-toolbar">
+            <div class="grid-wrapper">
+                <div class="global-toolbar">
 
-            <div class="toolbar-left hide-when-calendar">
-                <input type="text" id="globalSearch" data-i18n-placeholder="terms.search" class="textbox toolbar" />
+                    <div class="toolbar-left hide-when-calendar">
+                        <input type="text" id="globalSearch" data-i18n-placeholder="terms.search"
+                            class="textbox toolbar" />
+                    </div>
+
+                    <div class="toolbar-right">
+                        <div class="hide-when-calendar">
+                            <div id="archiveToggleContainer" class="toggle-button-group"></div>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="button primary grouped" id="btn1">
+                                <span class="button-content">
+                                    <span class="svg-button-grid"></span>
+                                </span>
+                            </button>
+
+                            <button class="button primary grouped" id="btn2">
+                                <span class="button-content">
+                                    <span class="svg-button-calender"></span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="grid"></div>
+                <div id="calendar"></div>
             </div>
 
-            <div class="toolbar-right">
-                <div class="hide-when-calendar">
-                    <div id="archiveToggleContainer" class="toggle-button-group"></div>
-                </div>
-
-                <div class="button-group">
-                    <button class="button primary grouped" id="btn1">
-                        <span class="button-content">
-                            <span class="svg-button-grid"></span>
-                        </span>
-                    </button>
-
-                    <button class="button primary grouped" id="btn2">
-                        <span class="button-content">
-                            <span class="svg-button-calender"></span>
-                        </span>
-                    </button>
-                </div>
-            </div>
         </div>
-        <div id="grid"></div>
-        <div id="calendar"></div>
     </div>
-
-</div>
-<div class="content-mobile" style="padding: 25px">
-    <div id="listview"></div>
-</div>
+    <div class="content-mobile" style="padding: 25px">
+        <div id="listview"></div>
+    </div>
+</body>
 <script>
 
     const archiveContainer = document.querySelector("#archiveToggleContainer");

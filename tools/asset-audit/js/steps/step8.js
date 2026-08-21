@@ -4,7 +4,7 @@ import { getIntuneDevices, fetchUserBatch } from '../functions/microsoftGraph.js
 import { state } from '../components/state.js';
 
 export const step8 = {
-  //title: t('terms.result'),
+    //title: t('terms.result'),
     render: async (container, data, wizardState) => {
         const steps = [
             "Collect Assets",
@@ -156,10 +156,21 @@ export const step8 = {
                         const syncDate = new Date(intuneDevice?.lastSyncDateTime || 0);
                         const lastLogin = new Date(lastLoginDate || 0);
 
+                        /*
                         postStockActivity =
                             enrolledDate > stockDate ||
                             syncDate > stockDate ||
                             lastLogin > stockDate;
+
+                        */
+
+                        const afterStockActivity = new Date(stockDate);
+                        afterStockActivity.setDate(afterStockActivity.getDate() + 1);
+
+                        postStockActivity =
+                            enrolledDate >= afterStockActivity ||
+                            syncDate >= afterStockActivity ||
+                            lastLogin >= afterStockActivity;
                     }
 
                     // Voeg alles toe aan het verrijkte asset

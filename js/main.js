@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.hash = reverseMapping[toolName];
   });
 
-
   // ---------------------
   // SIDEBAR COLLAPSE BUTTON
   // ---------------------
@@ -59,11 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleButton.addEventListener('click', () => {
     isCollapsed = !isCollapsed;
     sidebar.classList.toggle('collapsed', isCollapsed);
-
     icon.classList.toggle('e-chevron-left-small', !isCollapsed);
     icon.classList.toggle('e-chevron-right-small', isCollapsed);
   });
-
 
   // ---------------------
   // ABOUT BUTTON POPUP

@@ -40,7 +40,7 @@ export const step2 = {
             </div>
         </div>
         `;
-        
+
         setLanguage(window.currentLang);
 
         const urlInput = container.querySelector('#td-url');

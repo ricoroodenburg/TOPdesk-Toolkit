@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TOPdesk OAuth</title>
+</head>
+
+<body>
+    <p id="status">Processing TOPdesk authentication...</p>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        const code = params.get('code');
+        const returnedState = params.get('state');
+        const error = params.get('error');
+        const errorDescription = params.get('error_description');
+
+        if (!window.opener) {
+            document.getElementById('status').textContent =
+                'Unable to communicate with the application window.';
+        } else {
+            window.opener.postMessage(
+                {
+                    type: 'TOPDESK_OAUTH_RESULT',
+                    code,
+                    state: returnedState,
+                    error,
+                    errorDescription
+                },
+                window.location.origin
+            );
+
+            document.getElementById('status').textContent =
+                error
+                    ? `TOPdesk authentication failed: ${errorDescription || error}`
+                    : 'TOPdesk authentication successful. This window will close.';
+
+            if (!error) {
+                setTimeout(() => {
+                    window.close();
+                }, 500);
+            }
+        }
+    </script>
+</body>
+
+</html>

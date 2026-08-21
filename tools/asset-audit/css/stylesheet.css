@@ -16,7 +16,7 @@
     text-align: center;
     flex: 1;
     position: relative;
-    
+
 }
 
 /* Bolletje */
@@ -34,9 +34,9 @@
     margin: 0 auto;
     position: relative;
     z-index: 2;
-        border: var(--ds-spacer-border, 1px) solid var(--ds-color-border-default, rgb(137, 137, 137));
+    border: var(--ds-spacer-border, 1px) solid var(--ds-color-border-default, rgb(137, 137, 137));
     border-radius: var(--ds-spacer-radius-rounded, 9999px);
-    
+
 }
 
 .step-label {
@@ -125,7 +125,8 @@
 
 /* INVALID STEP */
 #stepList li.invalid .step-circle {
-    background: var(--ds-color-bg-danger-mid, #FF4D4F); /* rood */
+    background: var(--ds-color-bg-danger-mid, #FF4D4F);
+    /* rood */
     color: white;
     border: 2px solid var(--ds-color-bg-danger-dark, #B71C1C);
 }
@@ -137,36 +138,42 @@
 
 .step-line {
     position: absolute;
-    top: 22px;        /* midden van 40px bol = 20px + 2px lijn offset */
-    left: 50%;        /* begin bij het midden van de bol */
+    top: 22px;
+    /* midden van 40px bol = 20px + 2px lijn offset */
+    left: 50%;
+    /* begin bij het midden van de bol */
     height: calc(var(--ds-spacer-1x, 4px) / 2);
     width: 100%;
     /*background: var(--ds-color-bg-primary-mild);*/
     background: rgb(137, 137, 137);
     z-index: 1;
     transition: width 0.45s ease, background 0.45s ease;
-    
+
 }
 
 #stepList li:last-child .step-line {
-    display: none; /* geen lijn na laatste bol */
+    display: none;
+    /* geen lijn na laatste bol */
 }
 
 /* Scroll-container neemt alle ruimte behalve footer */
 .scroll-container {
-flex: 1 1 auto;          /* neemt beschikbare ruimte */
-display: flex;
-flex-direction: column;
-overflow-y: auto;        /* scrollen indien nodig */
-padding: 25px;
+    flex: 1 1 auto;
+    /* neemt beschikbare ruimte */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    /* scrollen indien nodig */
+    padding: 25px;
 }
 
 /* Footer krijgt vaste ruimte onderaan */
 .footer {
-flex: 0 0 auto;          /* vaste hoogte, niet meeschalen */
-display: flex;
-justify-content: space-between;
-padding: 25px;
+    flex: 0 0 auto;
+    /* vaste hoogte, niet meeschalen */
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
 }
 
 /* Summarize */
@@ -254,7 +261,6 @@ padding: 25px;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--ds-color-bg-default) !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,6 +268,7 @@ padding: 25px;
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--ds-color-fg-default) !important;
+    padding: var(--ds-layout-gap);
 }
 
 .compact-view-toolbar {
@@ -285,62 +292,64 @@ padding: 25px;
 }
 
 .Spinner {
-  width: 16px;
-  height: 16px;
-  border: 2px solid var(--ds-color-fg-primary-default);
-  border-top: 2px solid var(--ds-color-bg-primary-mild);    
-  border-radius: 50%;
-  animation: spin 0.6s linear infinite;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--ds-color-fg-primary-default);
+    border-top: 2px solid var(--ds-color-bg-primary-mild);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .SegmentedBar {
-  display: flex;
-  gap: 5px; /* als je gap meegeeft via props, kun je dit eventueel weghalen */
-  border-radius: 5px;
-  overflow: visible; /* laat onderliggende titels zien */
-  margin-bottom: 10px;
-  width: 100%;
+    display: flex;
+    gap: 5px;
+    /* als je gap meegeeft via props, kun je dit eventueel weghalen */
+    border-radius: 5px;
+    overflow: visible;
+    /* laat onderliggende titels zien */
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 .SegmentWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
 }
 
 .Segment {
-  width: 100%;
-  height: 10px;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
-  border-radius: 5px;
+    width: 100%;
+    height: 10px;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    border-radius: 5px;
 }
 
 .SegmentLabel {
-  margin-top: 6px;
-  text-align: center;
-  color: var(--ds-color-fg-default) !important;
-  cursor: pointer;
-  font-size: var(--ds-text-title-4-font-size) !important;
-  font-weight: 600;
-  line-height: 1.5;
-  font-family: var(--ds-text-family-primary);
+    margin-top: 6px;
+    text-align: center;
+    color: var(--ds-color-fg-default) !important;
+    cursor: pointer;
+    font-size: var(--ds-text-title-4-font-size) !important;
+    font-weight: 600;
+    line-height: 1.5;
+    font-family: var(--ds-text-family-primary);
 }
 
 .SegmentIcon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }

@@ -15,7 +15,7 @@
 }
 
 .grid-wrapper {
-    height: calc(100vh - 38px); /* buitenste padding weghalen */
+    height: calc(100vh - 104px); /* buitenste padding weghalen */
     display: flex;
     flex-direction: column;
 }

@@ -34,11 +34,4 @@ if (stored?.topdesk) {
     // Templates
     if (stored?.topdesk?.config?.selectedTemplates){state.topdesk.config.selectedTemplates = stored.topdesk.config.selectedTemplates || ""};
     
-    // Filters
-    //state.topdesk.config.filters.archiveStatus = state.topdesk.config.filters.archiveStatus || "";
-    //state.topdesk.config.filters.excludeField = state.topdesk.config.filters.excludeField || "";
-    //state.topdesk.config.filters.fields = state.topdesk.config.filters.fields || [];
-    //state.topdesk.config.filters.status = state.topdesk.config.filters.status || "";
-    
-    
 }

@@ -7,21 +7,28 @@
     <script>ej.base.registerLicense("Ngo9BigBOggjHTQxAR8/V1JGaF5cXGpCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWH1ceXVVRmBeWUB0VkFWYEs=");</script>-->
     <script src="https://cdn.syncfusion.com/ej2/33.2.12/dist/ej2.min.js"></script>
     <script>ej.base.registerLicense("Ngo9BigBOggjHTQxAR8/V1JHaF5cWWdCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdlWXlfdHRTQmFcWUdyWUJWYEo=");</script>
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<div class="scroll-container" style="padding: 25px">
-    <div id="stepsList">
-        <ul id="stepList"></ul>
-    </div>
-    <main id="wizard-content">
-        <div id="stepContainer"></div>
-    </main>
-</div>
+<body class="iframe-page">
+    <div class="content-frame" style="display:flex; flex-direction:column; height:100vh;">
 
-<!-- FOOTER -->
-<div class="footer">
-    <button class="button primary" id="prevBtn" disabled data-i18n="buttons.previousStep"></button>
-    <button class="button secondary" id="nextBtn" data-i18n="buttons.nextStep"></button>
-</div>
+        <div class="scroll-container" style="flex:1; min-height:0; overflow-y:auto;">
+            <div id="stepsList">
+                <ul id="stepList"></ul>
+            </div>
+
+            <main id="wizard-content">
+                <div id="stepContainer"></div>
+            </main>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer" style="flex-shrink:0; margin-top:auto;">
+            <button class="button primary" id="prevBtn" disabled data-i18n="buttons.previousStep"></button>
+            <button class="button secondary" id="nextBtn" data-i18n="buttons.nextStep"></button>
+        </div>
+
+    </div>
+</body>

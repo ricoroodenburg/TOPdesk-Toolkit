@@ -81,6 +81,7 @@
   "labels": {
     "topdeskUrl": "TOPdesk URL",
     "username": "Username",
+    "clientId": "Client ID",
     "applicationPassword": "Application Password"
   },
   "welcomePage": {

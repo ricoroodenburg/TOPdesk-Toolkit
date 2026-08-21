@@ -68,7 +68,7 @@ export async function testConnection(topdeskUrl, topdeskUsername, password) {
         console.error(`[${moduleName}][${functionName}] Unexpected response status: ${response.status}`);
         throw new Error(`[${moduleName}][${functionName}] Unexpected response status: ${response.status}`);
 
-    }catch(err){
+    } catch (err) {
         console.error(`[${moduleName}][${functionName}] Error: ${err.message}`);
         throw err;
     }
@@ -265,7 +265,7 @@ export async function getAssets({
                 method: 'POST',
                 headers: {
                     Authorization: 'Basic ' + btoa(`${topdeskUsername}:${password}`),
-                    'Content-Type': 'application/json', 
+                    'Content-Type': 'application/json',
                     Accept: 'application/json',
                 },
                 body: JSON.stringify(requestBody),
