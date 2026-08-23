@@ -67,7 +67,8 @@
     "notDevelopmentBy": "Dieses Produkt wurde nicht von TOPdesk entwickelt, unterstützt oder verlinkt. Nur Best-Effort.",
     "showOn": "Anzeigen auf",
     "canNotBeEmpty": "Darf nicht leer sein",
-    "credentialsValidTopdesk": "Anmeldedaten und Berechtigungen sind gültig"
+    "credentialsValidTopdesk": "Anmeldedaten und Berechtigungen sind gültig",
+    "mustStartsWithHttps":"Muss mit https:// beginnen"
   },
   "buttons": {
     "nextStep": "Weiter",

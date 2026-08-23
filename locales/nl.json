@@ -67,7 +67,8 @@
     "notDevelopmentBy": "Dit product is niet ontwikkeld, ondersteund of gelinkt aan TOPdesk. Alleen best-effort.",
     "showOn": "Toon op",
     "canNotBeEmpty": "Mag niet leeg zijn",
-    "credentialsValidTopdesk": "De inloggegevens en rechten zijn geldig"
+    "credentialsValidTopdesk": "De inloggegevens en rechten zijn geldig",
+    "mustStartsWithHttps":"Moet beginnen met https://"
   },
   "buttons": {
     "nextStep": "Volgende",

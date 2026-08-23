@@ -66,6 +66,10 @@ export const step2 = {
                 urlInput.classList.add("error");
                 errorUrl.textContent = `${t('labels.topdeskUrl')} ${t('messages.canNotBeEmpty').toLowerCase()}`;
                 valid = false;
+            }else if (!urlInput.value.trim().startsWith("https://")) {
+                urlInput.classList.add("error");
+                errorUrl.textContent = `${t('labels.topdeskUrl')} ${t('messages.mustStartsWithHttps').toLowerCase()}`;
+                valid = false;
             }
             if (!userInput.value.trim()) {
                 userInput.classList.add("error");
