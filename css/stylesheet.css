@@ -496,6 +496,10 @@
         --ds-link-focus-bg-color: var(--ds-color-bg-primary-mid, rgb(12, 121, 154));
         --ds-link-focus-text-decoration-color: var(--ds-color-fg-primary-emphasis, rgb(4, 70, 90))
     }
+
+    html {
+        color-scheme: dark;
+    }
 }
 
 /* Page elements */
