@@ -35,11 +35,10 @@ function formatDate(date) {
 
 function renderListView(root, data) {
     root.innerHTML = `
-        
-			<div class "task-list-option">
-				<input id="lv-search" class="textbox" placeholder="${t('terms.search')}..." />
-				<div id="lv-list" class="task-list-option" style="overflow-y:auto; max-height:600px;"></div>
-			</div>
+            <div class="task-list-option">
+                <input id="lv-search" class="textbox" placeholder="${t('terms.search')}..." />
+                <div id="lv-list"></div>
+            </div>
     `;
 
     const listEl = root.querySelector("#lv-list");
@@ -116,7 +115,7 @@ function renderListItem(item, globalIndex) {
     const desc = item.description ?? "";
 
     return `
-        <div class="task-list-option">
+        <div class="task-list">
             <div class="todo-item ${item.highlight ? 'highlight' : ''}" data-index="${globalIndex}">
                 <div class="left-column">
                     <div class="brief-description">

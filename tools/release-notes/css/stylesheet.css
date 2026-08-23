@@ -5,7 +5,7 @@
   padding-top: 25px;
   padding-right: 25px;
   padding-left: 25px;
-  padding-bottom: 0px;
+  padding-bottom: 25px;
   min-width: 0;
 }
 
@@ -361,4 +361,54 @@ body.calendar-view-active .hide-when-calendar {
   .more-btn.invoker__icon {
     background-image: none;
   }
+}
+
+body.iframe-page {
+    box-sizing: border-box;
+    height: 100vh;
+    margin: 0;
+    padding: 25px;
+    overflow: hidden;
+}
+
+body.iframe-page .content-mobile {
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+body.iframe-page #listview {
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+body.iframe-page .task-list-option {
+    height: 100%;
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 0;
+    overflow: hidden;
+}
+
+body.iframe-page #lv-search {
+    flex: 0 0 auto;
+}
+
+body.iframe-page #lv-list {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+body.iframe-page .content {
+    overflow: hidden;
+}
+
+.task-list {
+  padding-bottom: 1px
 }
